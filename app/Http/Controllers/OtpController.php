@@ -26,7 +26,7 @@ class OtpController extends Controller
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-              CURLOPT_URL => "http://2factor.in/API/V1/30a20943-9375-11ea-9fa5-0200cd936042/SMS/".$validatedData['phone']."/".$otp,
+              CURLOPT_URL => "https://2factor.in/API/V1/30a20943-9375-11ea-9fa5-0200cd936042/SMS/".$validatedData['phone']."/".$otp,
               CURLOPT_RETURNTRANSFER => true,
               CURLOPT_ENCODING => "",
               CURLOPT_MAXREDIRS => 10,
@@ -67,7 +67,7 @@ class OtpController extends Controller
             $curl = curl_init();
 
             curl_setopt_array($curl, array(
-              CURLOPT_URL => "http://2factor.in/API/V1/30a20943-9375-11ea-9fa5-0200cd936042/SMS/".$validatedData['phone']."/".$otp,
+              CURLOPT_URL => "https://2factor.in/API/V1/30a20943-9375-11ea-9fa5-0200cd936042/SMS/".$validatedData['phone']."/".$otp,
               CURLOPT_RETURNTRANSFER => true,
               CURLOPT_ENCODING => "",
               CURLOPT_MAXREDIRS => 10,
