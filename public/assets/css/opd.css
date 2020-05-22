@@ -1,0 +1,470 @@
+body{
+		background: #BEE2F4;
+		font-family: 'Barlow Semi Condensed', sans-serif;
+		color: #255985;
+		font-size: 14px;
+	}
+header{
+		padding: 10px 20px;
+		background: #6CA5C6;
+		color: #fff;
+	  }
+header a{
+			color: #fff;
+			text-decoration: none !important;
+		}
+header a:hover{
+				color: #255985;
+				text-decoration: none !important;
+			  }
+header a span{
+				font-size: .75rem;
+				font-family: 'Barlow Semi Condensed', sans-serif;
+				text-transform: uppercase;
+				white-space: pre;
+			 }
+header a.logo{
+				font-size: 1.5rem !important;
+				font-weight: 300;
+				display: block;
+				margin-top: 4px;
+	 		  }
+header a.logo span{
+					font-size: 1.5rem !important;
+					font-weight: 500;
+				  }
+.credit{
+		 display: inline-block;
+	   }
+.credit-box{
+				width: 24px;
+				height: 24px;
+				background: #FFFFFF;
+				display: block;
+				border-radius: 100%;
+				color:#255985;
+				margin-bottom: 1px;
+				margin-left: 8px; 
+				line-height: 24px;
+		   }			 
+.credit-box:hover{
+					background: #255985;
+					color: #fff;
+				 }
+.form-control-lg{
+					border-radius: 10rem !important;
+					font-size: 16px;
+				}
+
+.otp-card{
+			margin: 20px;
+			padding: 20px;
+			border-radius: 6px;
+			background: #F4F6FB;
+			text-align: center;
+		 }
+h1{
+	font-size: 1.5rem;
+	text-transform: capitalize;
+  }
+a{
+	color: #255985;
+	text-decoration: none;
+ }
+a:hover{
+	
+		 text-decoration: none;
+ 		}
+.btn-primary{
+				background-color: #255985;
+				border-color: #255985;
+				text-transform: uppercase;
+				font-weight: 500;
+				border-radius: 6px;
+			}
+.btn-primary:hover{
+					background-color: #232B59;
+				  }
+.btn-primary.form-control-lg{border-radius: 6px !important;}
+.opt-in{
+			width: 20%;
+			display: inline;
+			margin: 0 .25rem;
+			text-align: center;
+	   }
+.edit-num{
+			font-size: 14px;
+		 }
+.pay-option{
+				margin: 0;
+				padding: 0 0 0 10px;
+				text-align: left;
+				list-style: none;
+		   }
+.pay-option li label{
+						font-size: 1.25rem;
+						font-weight: 500;
+						padding-left: 10px;
+						
+					}
+.pay-option li label p{
+						font-size: 14px;
+						font-weight: 300;
+						width: 70%;
+					  }
+.pay-option input[type="radio"] {
+    width: 1.75rem;
+    height: 1.75rem;
+    float: left;
+}
+.fee{
+		display: inline-block;
+		text-align: right;
+		width: 55px;
+		font-size: 16px;
+	}
+.fee b{
+		font-weight: 300;
+		color: #F2A087;
+		text-decoration: line-through;
+	  }
+
+.base-timer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 3px;
+  stroke: #F4F6FB;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 3px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  color: #28a745;
+}
+
+.base-timer__path-remaining.orange {
+  color: #fd7e14;
+}
+
+.base-timer__path-remaining.red {
+  color: #dc3545;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.animate-bottom {
+  position: relative;
+  animation: animatebottom 0.40s;
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+.doc-found{
+			background: #fff;
+			width: 120px;
+			border-radius: 12px;
+			box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+			padding-bottom: 5px;
+			position: relative;
+		  }
+.doc-tap{
+			display: block;
+			width: 45px;
+			height: 45px;
+			background: #255985;
+			color: #fff;
+			text-align: center;
+			position: absolute;
+			border-radius: 100px;
+			left: 35px;
+			top: 80px;
+			line-height: 50px;
+			/*box-shadow: 0 .125rem .25rem rgb(40, 167, 69);*/
+			animation: glow 1s infinite alternate;
+		}
+@keyframes glow {
+				  from {
+				    box-shadow: 0 0 4px -4px #28a745;
+				  }
+				  to {
+				    box-shadow: 0 0 4px 4px #28a745;
+				  }
+}
+.doc-tap:hover{
+				color: #fff;
+				text-decoration: none;
+			  }
+.doc-pic{
+			border-top-left-radius:12px;
+			border-top-right-radius:12px; 
+			margin-bottom: 30px;
+		}
+.doc-found h4{
+				font-size: 16px;
+				font-weight: 500;
+				color: #28a745;
+			 }
+.doc-found h5{
+				font-size: 14px;
+				font-weight: 300;
+				color: #7D8184;
+			 }
+
+
+
+.button-cover, .knobs, .layer
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button
+{
+    position: relative;
+    top: 50%;
+    width: 100%;
+    height: 50px;
+    margin:  auto;
+    overflow: hidden;
+}
+
+.button.r, .button.r .layer
+{
+    border-radius: 100px;
+}
+
+.button.b2
+{
+    border-radius: 2px;
+}
+
+.checkbox
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs
+{
+    z-index: 2;
+}
+
+.layer
+{
+    width: 100%;
+    background-color: #D9EFD3;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+/* Button 10 */
+#button-10 .knobs:before, #button-10 .knobs:after, #button-10 .knobs span
+{
+    position: absolute;
+    top: 4px;
+    width: 20px;
+    height: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    border-radius: 2px;
+    transition: 0.3s ease all;
+}
+
+#button-10 .knobs:before
+{
+    content: '';
+    left: 4px;
+    background-color: #5FD807;
+    width: 48%;
+    height: 42px;
+}
+
+#button-10 .knobs:after
+{
+    content: 'NO';
+    right: 4px;
+    color: #4e4e4e;
+    width: 48%;
+    font-size: 1rem;
+    line-height: 27px;
+}
+
+#button-10 .knobs span
+{
+    display: inline-block;
+    left: 4px;
+    color: #fff;
+    z-index: 1;
+    width: 48%;
+    font-size: 1rem;
+    line-height: 27px;
+}
+
+#button-10 .checkbox:checked + .knobs span
+{
+    color: #4e4e4e;
+}
+
+#button-10 .checkbox:checked + .knobs:before
+{
+    left: 48%;
+    background-color: #F44336;
+    width: 50%;
+    height: 42px;
+}
+
+#button-10 .checkbox:checked + .knobs:after
+{
+    color: #fff;
+}
+
+#button-10 .checkbox:checked ~ .layer
+{
+    background-color: #fcebeb;
+}
+
+
+
+
+.sonar-wrapper {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+/* The circle */
+.sonar-emitter {
+  position: relative;
+  margin: 0 auto;
+  width: 55px;
+  height: 55px;
+  border-radius: 9999px;
+  background-color: #28a745;
+  color: #fff;
+  box-shadow: inset 0 0 5px #23963D;
+}
+.sonar-emitter a{color: #fff; text-decoration: none;}
+.sonar-emitter a:hover{opacity: .7 !important;}
+.sonar-emitter .fa-phone{line-height: 55px;}
+/* the 'wave', same shape and size as its parent */
+.sonar-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background-color: #28a745;
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/*
+  Animate!
+  NOTE: add browser prefixes where needed.
+*/
+.sonar-wave {
+  animation: sonarWave 2s linear infinite;
+}
+
+@keyframes sonarWave {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+		font-weight: 300;
+		font-size: 14px;
+	  }
+footer a{
+			text-decoration: none !important;
+			color:#255985;
+			margin: .5rem;
+		}
