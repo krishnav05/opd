@@ -17,7 +17,11 @@ Route::get('/', function () {
     return view('otp_login_page');
 });
 
-Auth::routes();
+Auth::routes([
+  'register' => false, // Registration Routes...
+  'reset' => false, // Password Reset Routes...
+  'verify' => false, // Email Verification Routes...
+]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -31,6 +35,18 @@ Route::post('otp-send','OtpController@sendOtp');
 
 Route::post('otp-verify','OtpController@verifyOtp');
 
-Route::post('dopayment', 'Patient\RazorpayController@dopayment')->name('dopayment')->middleware('auth');
+Route::post('dopayment', 'Patient\RazorpayController@dopayment')->name('dopayment')->middleware('auth.custom');
 
-Route::get('find-doc','FindController@index');
+Route::get('find-doc','FindController@index')->middleware('auth.custom');
+
+Route::get('contact-us','ContactUsController@index');
+
+Route::post('contact-details','ContactUsController@update');
+
+Route::get('credits','FindController@addCredits')->middleware('auth.custom');
+
+//doctor login
+
+Route::get('doctorlogin','DoctorController@loginPage');
+
+Route::post('doc-login','DoctorController@login');

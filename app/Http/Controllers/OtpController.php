@@ -106,10 +106,10 @@ class OtpController extends Controller
         	Auth::login($user);
             $check_if_verified = User::where('phone',$request->phone)->where('phone_verified',1)->first();
             if($check_if_verified){
-            	User::where('phone',$request->phone)->update(['otp'=>null,'phone_verified'=>1]);	
+            	User::where('phone',$request->number)->update(['otp'=>null,'phone_verified'=>1]);	
             }
             else{
-            	User::where('phone',$request->phone)->update(['otp'=>null]);
+            	User::where('phone',$request->number)->update(['otp'=>null]);
             }
 
             return view('select_payment');

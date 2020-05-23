@@ -25,7 +25,7 @@
 
   <div class="row">
     <div class="col text-center">
-      <p> Are you a doctor? <br> <a href="">Contact Us</a> </p>
+      <p> Are you a doctor? <br> <a href="contact-us">Contact Us</a> </p>
     </div>
   </div>
   

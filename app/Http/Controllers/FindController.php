@@ -11,4 +11,9 @@ class FindController extends Controller
     {
     	return view('find_doc');
     }
+
+    public function addCredits()
+    {
+    	return view('select_payment');
+    }
 }
