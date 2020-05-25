@@ -27,12 +27,12 @@
         <div class="modal-body">
          <h1 class="text-center mb-3"> Doctor is available!<br> you Chat now. </h1>
          <div class="doc-found m-auto text-center">
-           <img src="{{asset('assets/img/doc-img.jpg')}}" class="doc-pic">
+           <img id="doc-image" src="" class="doc-pic">
            <a href="#" class="doc-tap"><i class="fa fa-mobile fa-2x"></i></a>
            <h4>Available</h4>
-           <h5>Dr. Rajiv Kochar</h5>
+           <h5 id="doc-name"></h5>
          </div>
-         <input type="submit" formaction="" name="" value="start chatting" class="btn btn-primary form-control form-control-lg mt-3">
+         <input id="start-chat" type="submit" formaction="" name="" value="start chatting" class="btn btn-primary form-control form-control-lg mt-3">
          
        </div>
        
@@ -89,9 +89,9 @@
     </div>
     `;
     startTimer();
-    setTimeout(function() {
-      $('#find-doc').modal();
-    }, 20000);
+    // setTimeout(function() {
+    //   $('#find-doc').modal();
+    // }, 20000);
   });
 
     // Enable pusher logging - don't include this in production
@@ -120,9 +120,30 @@
       {
         localStorage.setItem("id", data.doctorid);
       console.log(data.id);
-      window.location = '/chatify';
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+                    /* the route pointing to the post function */
+                    url: "doc-details",
+                    type: 'POST',
+                    /* send the csrf-token and the input to the controller */
+                    data: {_token: CSRF_TOKEN ,doctorid:data.doctorid},
+                    dataType: 'JSON',
+                    /* remind that 'data' is the response of the AjaxController */
+                    success: function (data) { 
+                       // window.userid = data.id;
+                       // alert(window.userid);
+                       $('#doc-name').append(data.name);
+                       $('#doc-image').attr('src','/storage/users-avatar/'+data.image).width('120px').height('100px');
+                       $('#find-doc').modal();
+                    }
+                });
+      // window.location = '/chatify';
       }
       
+    });
+
+    $('#start-chat').on('click',function(){
+      window.location = '/chatify';
     });
   </script>
 @endsection

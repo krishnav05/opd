@@ -59,3 +59,5 @@ Route::post('doc-login','DoctorController@login');
 Route::get('call-pickup','DoctorController@callPickup')->name('pickup');
 
 Route::post('call-pickup','DoctorController@alertPatient');
+
+Route::post('doc-details','DoctorController@getDetails');

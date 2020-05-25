@@ -46,7 +46,8 @@ class DoctorController extends Controller
     {
         $id = Auth::user()->id;
         // $text = request()->text;
-        if(Consultations::where('patientId',$request->patientid)->value('doctorId') == null)
+        $check = Consultations::where('patientId',$request->patientid)->where('doctorId',null)->where('completed',null)->first();
+        if($check)
         {
             Consultations::where('patientId',$request->patientid)->update(['doctorId'=>$id]);
             event(new NotifyPatient($id,$request->patientid));
@@ -69,6 +70,20 @@ class DoctorController extends Controller
 
 
           
+    }
+
+    public function getDetails(Request $request)
+    {
+        $name = User::where('id',$request->doctorid)->value('name');
+        $avatar = User::where('id',$request->doctorid)->value('avatar');
+
+        $response = array(
+                    'image' => $avatar,
+                    'name' => $name,
+                );
+
+        return response()->json($response);
+
     }
 
 
