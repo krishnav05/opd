@@ -21,7 +21,7 @@
         <div class="col text-left pl-0"> <a class="fa fa-history fa-2x text-center" href=""> <span class="d-block">History</span> </a> </div>
         <div class="col text-center"> <a href="" onclick="return false;" class="logo"> only<span>OPD</span> </a> </div>
         <div class="col text-right pr-0"> <a class="credit text-center" href="credits"> <span class="
-          credit-box">0</span> <span class="d-block">Credits</span> </a> </div>
+          credit-box">@if(isset($credit)) {{$credit}} @else 0 @endif</span> <span class="d-block">Credits</span> </a> </div>
         </div>
       </div>
     </header>

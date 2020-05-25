@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\User;
+use App\Transactions;
 
 class OtpController extends Controller
 {
@@ -111,12 +112,43 @@ class OtpController extends Controller
             else{
             	User::where('phone',$request->number)->update(['otp'=>null]);
             }
-
-            return view('select_payment');
+            $credit = User::where('phone',$request->number)->value('credits');
+            if(User::where('phone',$request->number)->value('credits') == 0)
+            { 
+              
+              return redirect()->route('credits')->with(['credit' => $credit]);
+            }
+            else
+            {
+              return redirect()->route('find.doctor')->with(['credit' => $credit]);
+            }
+            
         }
         else
         {
         	return view('enter_otp',['number'=>$request->number]);
         }
+    }
+
+    public function add(Request $request)
+    { 
+
+      $new = new Transactions;
+      $new->userid = Auth::user()->id;
+      $new->amount = $request->amount;
+      $new->save();
+      
+      if($request->amount == 450)
+      {
+        Auth::user()->increment('credits',5);
+      }
+      else if($request->amount == 175)
+      {
+        Auth::user()->increment('credits',2);
+      }
+      else if($request->amount == 99)
+      {
+        Auth::user()->increment('credits',1);
+      }
     }
 }

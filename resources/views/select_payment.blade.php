@@ -76,7 +76,20 @@
             },
             complete: function (r) {
                console.log(r);
-               window.location = 'find-doc';
+                $.ajax({
+                            method: 'post',
+                            url: "addcredits",
+                            data: {
+                                "_token": "{{ csrf_token() }}",
+                                "amount": $("input[name='amount']:checked").val()
+                            },
+                            complete: function (r) {
+                               console.log(r);
+                               
+                               window.location = 'find-doc';
+                            }
+                        })               
+               // window.location = 'find-doc';
             }
         })
     }

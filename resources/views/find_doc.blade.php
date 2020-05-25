@@ -13,7 +13,7 @@
   <div id="app" class="col">
     
   </div>
-  <input id="findnow" type="button" formaction="" name="" value="Consult Doctor Now" class="btn btn-primary form-control form-control-lg mt-3">
+  <input id="findnow" type="button" value="Consult Doctor Now" class="btn btn-primary form-control form-control-lg mt-3">
   <div style="display: none;"><h1 class="text-center mb-4">hang on! <br> finding a doctor for you</h1 class="text-center"></div>
 
     
@@ -43,12 +43,28 @@
  @endsection
 
  @section('footer')
-
+<script src="https://js.pusher.com/6.0/pusher.min.js"></script>
  <script type="text/javascript">
-
+  var userid;
   $('#findnow').on('click',function(){
     $(this).hide();
     $(this).next('div').show();
+
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+                    /* the route pointing to the post function */
+                    url: "find-doc",
+                    type: 'POST',
+                    /* send the csrf-token and the input to the controller */
+                    data: {_token: CSRF_TOKEN},
+                    dataType: 'JSON',
+                    /* remind that 'data' is the response of the AjaxController */
+                    success: function (data) { 
+                       window.userid = data.id;
+                       // alert(window.userid);
+                    }
+                });
+
     document.getElementById("app").innerHTML = `
     <div class="base-timer">
     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -77,6 +93,36 @@
       $('#find-doc').modal();
     }, 20000);
   });
-</script>
 
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('5cee25784dec312477c7', {
+      authEndpoint: '/broadcasting/auth',
+      encrypted: true,
+      cluster: 'ap2',
+      auth: {
+ 
+        headers: {
+ 
+            'X-CSRF-Token': '{{ csrf_token() }}'
+ 
+        }
+ 
+    }
+    });
+
+    var channel = pusher.subscribe('private-patient-channel');
+    channel.bind('notify-patient', function(data) {
+      // alert(JSON.stringify(data));
+      
+      if(data.patientid == window.userid)
+      {
+        localStorage.setItem("id", data.doctorid);
+      console.log(data.id);
+      window.location = '/chatify';
+      }
+      
+    });
+  </script>
 @endsection

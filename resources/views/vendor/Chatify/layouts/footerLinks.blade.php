@@ -16,5 +16,11 @@
 <script src="{{ asset('js/chatify/code.js') }}"></script>
 <script>
   // Messenger global variable - 0 by default
-  messenger = "{{ @$id }}";
+  // messenger = "{{ @$id }}";
+    messenger = "user_"+localStorage.getItem('id');
+  
+  setTimeout(function() {
+    var id = localStorage.getItem('id');
+  IDinfo(id , 'user');
+}, 2000);
 </script>

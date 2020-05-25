@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Events\NotifyDoctor;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,16 +38,24 @@ Route::post('otp-verify','OtpController@verifyOtp');
 
 Route::post('dopayment', 'Patient\RazorpayController@dopayment')->name('dopayment')->middleware('auth.custom');
 
-Route::get('find-doc','FindController@index')->middleware('auth.custom');
+Route::post('addcredits','OtpController@add')->middleware('auth.custom');
+
+Route::post('find-doc','FindController@alertDoctor')->middleware('auth.custom');
+
+Route::get('find-doc','FindController@index')->middleware('auth.custom')->name('find.doctor');
 
 Route::get('contact-us','ContactUsController@index');
 
 Route::post('contact-details','ContactUsController@update');
 
-Route::get('credits','FindController@addCredits')->middleware('auth.custom');
+Route::get('credits','FindController@addCredits')->middleware('auth.custom')->name('credits');
 
 //doctor login
 
 Route::get('doctorlogin','DoctorController@loginPage');
 
 Route::post('doc-login','DoctorController@login');
+
+Route::get('call-pickup','DoctorController@callPickup')->name('pickup');
+
+Route::post('call-pickup','DoctorController@alertPatient');

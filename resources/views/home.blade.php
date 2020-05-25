@@ -15,6 +15,11 @@
                     @endif
 
                     You are logged in!
+                      <form action="find-doc" method="POST">
+    @csrf
+    <input type="text" name="text">
+    <input type="submit">
+  </form>
                 </div>
             </div>
         </div>
