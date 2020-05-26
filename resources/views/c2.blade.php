@@ -32,7 +32,7 @@ function gotMedia (stream) {
     if ('srcObject' in video) {
       video.srcObject = stream
     } else {
-      video.src = window.URL.createObjectURL(stream) // for older browsers
+      // video.src = window.URL.createObjectURL(stream) // for older browsers
     }
 
     video.play()
