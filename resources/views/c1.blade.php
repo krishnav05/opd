@@ -5,13 +5,10 @@
 </head>
 <body>
 c1
-<script src="{{asset('assets/js/peer.js')}}"></script>
+<script src="simplepeer.min.js"></script>
 <script type="text/javascript">
-	
-	var peer = new Peer();
-	peer.on('open', function(id) {
-		console.log('My peer ID is: ' + id);
-	});
+
+
 </script>
 
 </body>

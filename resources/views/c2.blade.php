@@ -5,23 +5,39 @@
 </head>
 <body>
 c2
-	<script src="{{asset('assets/js/peer.js')}}"></script>
+<div class="video"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simple-peer/9.7.2/simplepeer.min.js"></script>
 <script type="text/javascript">
-	
-	var peer = new Peer();
-	var conn = peer.connect('another-peers-id');
-// on open will be launch when you successfully connect to PeerServer
-conn.on('open', function(){
-  // here you have conn.id
-  conn.send('hi!');
-});
-peer.on('connection', function(conn) {
-  conn.on('data', function(data){
-    // Will print 'hi!'
-    console.log(data);
-  });
-});
+navigator.mediaDevices.getUserMedia({
+  video: true,
+  audio: true
+}).then(gotMedia).catch(() => {})
 
+function gotMedia (stream) {
+  var peer1 = new SimplePeer({ initiator: true, stream: stream })
+  var peer2 = new SimplePeer()
+
+  peer1.on('signal', data => {
+    peer2.signal(data)
+  })
+
+  peer2.on('signal', data => {
+    peer1.signal(data)
+  })
+
+  peer2.on('stream', stream => {
+    // got remote video stream, now let's show it in a video tag
+    var video = document.querySelector('video')
+
+    if ('srcObject' in video) {
+      video.srcObject = stream
+    } else {
+      video.src = window.URL.createObjectURL(stream) // for older browsers
+    }
+
+    video.play()
+  })
+}
 </script>
 </body>
 </html>
