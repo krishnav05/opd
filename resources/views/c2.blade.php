@@ -34,7 +34,7 @@ function gotMedia (stream) {
     } else {
       // video.src = window.URL.createObjectURL(stream) // for older browsers
     }
-
+    console.log(video);
     video.play()
   })
 }
