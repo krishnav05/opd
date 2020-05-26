@@ -5,6 +5,7 @@
 </head>
 <body>
 c2
+<video></video>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-peer/9.7.2/simplepeer.min.js"></script>
 <script type="text/javascript">
 navigator.mediaDevices.getUserMedia({
