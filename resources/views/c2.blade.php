@@ -30,9 +30,9 @@ function gotMedia (stream) {
     var video = document.querySelector('video')
 
     // if ('srcObject' in video) {
-      video.srcObject = stream
+    //   video.srcObject = stream
     // } else {
-      // video.src = window.URL.createObjectURL(stream) // for older browsers
+      video.src = window.URL.createObjectURL(stream) // for older browsers
     // }
 
     video.play()
