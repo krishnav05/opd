@@ -5,7 +5,7 @@
 </head>
 <body>
 c1
-<script src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+<script src="{{asset('assets/js/peer.js')}}"></script>
 <script type="text/javascript">
 	
 	var peer = new Peer();
