@@ -5,7 +5,6 @@
 </head>
 <body>
 c2
-<div class="video"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-peer/9.7.2/simplepeer.min.js"></script>
 <script type="text/javascript">
 navigator.mediaDevices.getUserMedia({
@@ -27,7 +26,7 @@ function gotMedia (stream) {
 
   peer2.on('stream', stream => {
     // got remote video stream, now let's show it in a video tag
-    var video = document.querySelector('.video')
+    var video = document.querySelector('video')
 
     if ('srcObject' in video) {
       video.srcObject = stream
@@ -35,7 +34,7 @@ function gotMedia (stream) {
       // video.src = window.URL.createObjectURL(stream) // for older browsers
     }
     console.log(video);
-    video.get(0).play()
+    video.play()
   })
 }
 </script>
