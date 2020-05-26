@@ -61,3 +61,14 @@ Route::get('call-pickup','DoctorController@callPickup')->name('pickup');
 Route::post('call-pickup','DoctorController@alertPatient');
 
 Route::post('doc-details','DoctorController@getDetails');
+
+
+//video test routes
+
+Route::get('c1',function(){
+	return view('c1');
+});
+
+Route::get('c2',function(){
+	return view('c2');
+});
