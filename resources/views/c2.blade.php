@@ -35,7 +35,7 @@ function gotMedia (stream) {
       // video.src = window.URL.createObjectURL(stream) // for older browsers
     }
     console.log(video);
-    video.play()
+    video.get(0).play()
   })
 }
 </script>
