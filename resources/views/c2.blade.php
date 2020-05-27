@@ -20,7 +20,7 @@ navigator.mediaDevices.getUserMedia({
 
 function gotMedia (stream) {
   var peer1 = new SimplePeer({ initiator: true, stream: stream })
-  var peer2 = new SimplePeer()
+  // var peer2 = new SimplePeer()
 
   peer1.on('signal', data => {
     console.log(data)
@@ -39,25 +39,25 @@ function gotMedia (stream) {
                        // alert(window.userid);
                     }
                 });
-    peer2.signal(data)
+    // peer2.signal(data)
   })
 
-  peer2.on('signal', data => {
-    peer1.signal(data)
-  })
+  // peer2.on('signal', data => {
+  //   peer1.signal(data)
+  // })
 
-  peer2.on('stream', stream => {
-    // got remote video stream, now let's show it in a video tag
-    var video = document.querySelector('video')
+  // peer2.on('stream', stream => {
+  //   // got remote video stream, now let's show it in a video tag
+  //   var video = document.querySelector('video')
 
-    if ('srcObject' in video) {
-      video.srcObject = stream
-    } else {
-      // video.src = window.URL.createObjectURL(stream) // for older browsers
-    }
-    console.log(video);
-    video.play()
-  })
+  //   if ('srcObject' in video) {
+  //     video.srcObject = stream
+  //   } else {
+  //     // video.src = window.URL.createObjectURL(stream) // for older browsers
+  //   }
+  //   console.log(video);
+  //   video.play()
+  // })
 }
 </script>
 </body>
