@@ -7,6 +7,7 @@
 c1
 <video></video>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-peer/9.7.2/simplepeer.min.js"></script>
+<script src="https://js.pusher.com/6.0/pusher.min.js"></script>
 <script type="text/javascript">
 
       var peer2 = new SimplePeer()
