@@ -19,7 +19,7 @@ navigator.mediaDevices.getUserMedia({
 
 function gotMedia (stream) {
   var peer1 = new SimplePeer({ initiator: true, stream: stream })
-  // var peer2 = new SimplePeer()
+  var peer2 = new SimplePeer()
 
   peer1.on('signal', data => {
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
