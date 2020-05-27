@@ -24,13 +24,14 @@ function gotMedia (stream) {
 
   peer1.on('signal', data => {
     console.log(data)
+    var totaldata = JSON.stringify(data);
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     $.ajax({
                     /* the route pointing to the post function */
                     url: "stream",
                     type: 'POST',
                     /* send the csrf-token and the input to the controller */
-                    data: {_token: CSRF_TOKEN,data:data},
+                    data: {_token: CSRF_TOKEN,data:totaldata},
                     dataType: 'JSON',
                     /* remind that 'data' is the response of the AjaxController */
                     success: function (data) { 
