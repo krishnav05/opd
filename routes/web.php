@@ -72,3 +72,5 @@ Route::get('c1',function(){
 Route::get('c2',function(){
 	return view('c2');
 });
+
+Route::post('stream','FindController@stream');

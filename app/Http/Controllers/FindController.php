@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use App\Events\NotifyDoctor;
+use App\Events\ClientStream;
 use App\Consultations;
 
 class FindController extends Controller
@@ -38,5 +39,12 @@ class FindController extends Controller
 
                 return response()->json($response);        
 
+    }
+
+    public function stream(Request $request)
+    {
+        $data = $request->data;
+        
+        event(new ClientStream($data));
     }
 }

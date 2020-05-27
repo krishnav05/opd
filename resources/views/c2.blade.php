@@ -15,9 +15,23 @@ navigator.mediaDevices.getUserMedia({
 
 function gotMedia (stream) {
   var peer1 = new SimplePeer({ initiator: true, stream: stream })
-  var peer2 = new SimplePeer()
+  // var peer2 = new SimplePeer()
 
   peer1.on('signal', data => {
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+                    /* the route pointing to the post function */
+                    url: "stream",
+                    type: 'POST',
+                    /* send the csrf-token and the input to the controller */
+                    data: {_token: CSRF_TOKEN,data:data},
+                    dataType: 'JSON',
+                    /* remind that 'data' is the response of the AjaxController */
+                    success: function (data) { 
+                       // window.userid = data.id;
+                       // alert(window.userid);
+                    }
+                });
     peer2.signal(data)
   })
 
