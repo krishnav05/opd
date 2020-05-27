@@ -23,7 +23,7 @@ class ClientStream implements ShouldBroadcast
     public function __construct($data)
     {
         //
-        $data;
+        $this->data = $data;
     }
 
     /**

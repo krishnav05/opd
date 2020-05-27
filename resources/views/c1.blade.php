@@ -32,8 +32,7 @@ c1
     var channel = pusher.subscribe('private-stream-channel');
     channel.bind('notify-patient', function(data) {
       // alert(JSON.stringify(data));
-      data = JSON.stringify(data)
-      peer2.signal(data)
+      peer2.signal(data.data)
       
     });
 peer2.on('stream', stream => {
