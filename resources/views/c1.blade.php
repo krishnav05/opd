@@ -52,9 +52,8 @@ peer2.on('stream', stream => {
     video.play()
   })
 $('#click').on('click',function(){
-	var data = $('#id').val();
-	var news = JSON.parse(data); 
-	peer2.signal(news)
+	var data = $('#id').val().parseJSON()
+	peer2.signal(data)
 });
 </script>
 
