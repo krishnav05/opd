@@ -23,6 +23,7 @@ function gotMedia (stream) {
   var peer2 = new SimplePeer()
 
   peer1.on('signal', data => {
+    console.log(data)
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     $.ajax({
                     /* the route pointing to the post function */
