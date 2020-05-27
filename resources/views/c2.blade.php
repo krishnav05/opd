@@ -23,7 +23,7 @@ function gotMedia (stream) {
   // var peer2 = new SimplePeer()
 
   peer1.on('signal', data => {
-    console.log(data)
+    console.log(JSON.stringify(data))
     var totaldata = JSON.stringify(data);
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     $.ajax({
