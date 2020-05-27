@@ -23,3 +23,7 @@ Broadcast::channel('my-channel', function ($user) {
 Broadcast::channel('patient-channel', function ($user) {
     return true;
 });
+
+Broadcast::channel('stream-channel', function ($user) {
+    return true;
+});
