@@ -41,10 +41,4 @@ class FindController extends Controller
 
     }
 
-    public function stream(Request $request)
-    {
-        $data = $request->data;
-        
-        event(new ClientStream($data));
-    }
 }
