@@ -468,3 +468,6 @@ footer a{
 			color:#255985;
 			margin: .5rem;
 		}
+
+
+.Embed-mask .message.button{top:0 !important;}
