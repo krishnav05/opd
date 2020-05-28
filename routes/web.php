@@ -64,3 +64,8 @@ Route::post('doc-details','DoctorController@getDetails');
 
 
 //video test routes
+Route::get('patient-video-call','PatientController@connectVideo');
+
+Route::get('video-call',function(){
+	return view('video_call');
+});
