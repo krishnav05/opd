@@ -116,6 +116,6 @@ class DoctorController extends Controller
 
         $token = $opentok->generateToken($sessionId);
 
-        return view('patient_video_call',['session_id'=>$sessionId,'opentok_token'=>$token]);
+        return view('doctor_video_call',['session_id'=>$sessionId,'opentok_token'=>$token]);
     }
 }
