@@ -19,7 +19,6 @@ class PatientController extends Controller
     	$opentok = new OpenTok($api, $secret);
 
     	$sessionId = Consultations::where('patientId',Auth::user()->id)->where('completed',null)->value('session_id');
-        dd($sessionId);
 
 		$token = $opentok->generateToken($sessionId);
 
