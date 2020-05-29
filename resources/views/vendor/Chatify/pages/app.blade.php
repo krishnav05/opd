@@ -12,14 +12,14 @@
                     <a href="#" class="listView-x"><i class="fas fa-times"></i></a>
                 </nav>
             </nav>
-            {{-- Search input --}}
-            <input type="text" class="messenger-search" placeholder="Search" />
+            <!-- {{-- Search input --}}
+            <input type="text" class="messenger-search" placeholder="Search" /> -->
             {{-- Tabs --}}
             <div class="messenger-listView-tabs">
                 <a href="#" @if($route == 'user') class="active-tab" @endif data-view="users">
                     <span class="far fa-user"></span> People</a>
-                <a href="#" @if($route == 'group') class="active-tab" @endif data-view="groups">
-                    <span class="fas fa-users"></span> Groups</a>
+                <!-- <a href="#" @if($route == 'group') class="active-tab" @endif data-view="groups">
+                    <span class="fas fa-users"></span> Groups</a> -->
             </div>
         </div>
         {{-- tabs and lists --}}
@@ -29,18 +29,18 @@
            <div class="@if($route == 'user') show @endif messenger-tab app-scroll" data-view="users">
 
                {{-- Favorites --}}
-               <p class="messenger-title">Favorites</p>
-                <div class="messenger-favorites app-scroll-thin"></div>
+               <!-- <p class="messenger-title">Favorites</p> -->
+                <div class="messenger-favorites app-scroll-thin" style="display: none;"></div>
 
-               {{-- Saved Messages --}}
-               {!! view('Chatify::layouts.listItem', ['get' => 'saved','id' => $id])->render() !!}
+               <!-- {{-- Saved Messages --}}
+               {!! view('Chatify::layouts.listItem', ['get' => 'saved','id' => $id])->render() !!} -->
 
                {{-- Contact --}}
                <div class="listOfContacts" style="width: 100%;height: calc(100% - 200px);"></div>
                
            </div>
 
-           {{-- ---------------- [ Group Tab ] ---------------- --}}
+           <!-- {{-- ---------------- [ Group Tab ] ---------------- --}}
            <div class="@if($route == 'group') show @endif messenger-tab app-scroll" data-view="groups">
                 {{-- items --}}
                 <p style="text-align: center;color:grey;">Soon will be available</p>
@@ -53,7 +53,7 @@
                 <div class="search-records">
                     <p class="message-hint"><span>Type to search..</span></p>
                 </div>
-             </div>
+             </div> -->
         </div>
     </div>
 
@@ -71,9 +71,13 @@
                 </div>
                 {{-- header buttons --}}
                 <nav class="m-header-right">
-                    <a href="#" class="add-to-favorite"><i class="fas fa-star"></i></a>
-                    <a href="{{ route('home') }}"><i class="fas fa-home"></i></a>
+                    <!-- <a href="#" class="add-to-favorite"><i class="fas fa-star"></i></a> -->
+                    <!-- <a href="{{ route('home') }}"><i class="fas fa-home"></i></a> -->
                     <a href="#" class="show-infoSide"><i class="fas fa-info-circle"></i></a>
+                    @if(auth()->user()->role_id == '1')
+                    <!-- add call function here -->
+                    <a href="#" class="show-infoSide" onclick="window.location = '/doctor-video-call';"><i class="fas fa-video"></i></a>
+                    @endif
                 </nav>
             </nav>
         </div>

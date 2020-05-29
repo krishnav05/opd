@@ -69,3 +69,5 @@ Route::get('patient-video-call','PatientController@connectVideo');
 Route::get('video-call',function(){
 	return view('video_call');
 });
+
+Route::get('doctor-video-call','DoctorController@connectVideo');

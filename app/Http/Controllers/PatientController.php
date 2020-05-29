@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use OpenTok\OpenTok;
 use OpenTok\MediaMode;
 use OpenTok\ArchiveMode;
+use App\Consultations;
 
 class PatientController extends Controller
 {
@@ -16,16 +17,10 @@ class PatientController extends Controller
     	$secret = 'd3de7b6811f3603e5c78208af0906c58a0658f53';
     	$opentok = new OpenTok($api, $secret);
 
-    	$sessionOptions = array(
-		    'archiveMode' => ArchiveMode::ALWAYS,
-		    'mediaMode' => MediaMode::ROUTED
-		);
-		$session = $opentok->createSession($sessionOptions);
-
-		$sessionId = $session->getSessionId();
+    	$sessionId = Consultations::where('patientId',Auth::user()->id)->where('completed',null)->value('session_id');
 
 		$token = $opentok->generateToken($sessionId);
 
-		return view('patient_video_call',['session_id'=>$sessionId,'session_token'=>$session,'opentok_token'=>$token]);
+		return view('patient_video_call',['session_id'=>$sessionId,'opentok_token'=>$token]);
     }
 }
