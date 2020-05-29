@@ -107,7 +107,7 @@ class DoctorController extends Controller
 
             $sessionId = $session->getSessionId();
 
-            Consultations::where('doctorId',Auth::user()->id)->where('session_id',null)->where('completed',null)->update(['session_id'=>$session_id]);
+            Consultations::where('doctorId',Auth::user()->id)->where('session_id',null)->where('completed',null)->update(['session_id'=>$sessionId]);
         }
         else
         {
