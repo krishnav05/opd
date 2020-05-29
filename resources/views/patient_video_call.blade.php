@@ -5,7 +5,7 @@
 </head>
 <body>
 
-    <div>SessionKey: {{ $session_token }}</div>
+    <div>SessionKey:</div>
     <div id="videos">
         <div id="subscriber"></div>
         <div id="publisher"></div>
