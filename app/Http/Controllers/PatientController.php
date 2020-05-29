@@ -12,8 +12,9 @@ class PatientController extends Controller
     //
     public function connectVideo(Request $request)
     {
-    	
-    	$opentok = new OpenTok(env('OPENTOK_API_KEY'), env('OPENTOK_API_SECRET'));
+    	$api = '46765912';
+    	$secret = 'd3de7b6811f3603e5c78208af0906c58a0658f53';
+    	$opentok = new OpenTok($api, $secret);
 
     	$sessionOptions = array(
 		    'archiveMode' => ArchiveMode::ALWAYS,
@@ -25,6 +26,6 @@ class PatientController extends Controller
 
 		$token = $opentok->generateToken($sessionId);
 
-		return view('patient_video_call',['session_token'=>$session,'opentok_token'=>$token]);
+		return view('patient_video_call',['session_id'=>$sessionId,'session_token'=>$session,'opentok_token'=>$token]);
     }
 }
