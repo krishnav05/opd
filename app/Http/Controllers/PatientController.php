@@ -7,6 +7,7 @@ use OpenTok\OpenTok;
 use OpenTok\MediaMode;
 use OpenTok\ArchiveMode;
 use App\Consultations;
+use Auth;
 
 class PatientController extends Controller
 {
