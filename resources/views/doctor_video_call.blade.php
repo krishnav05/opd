@@ -20,10 +20,10 @@
     <script src="https://static.opentok.com/v2/js/opentok.js"></script>
 </head>
 <body>
-<main>
-      <div id="subscriber" class="subscriber"></div>
-      <div id="publisher" class="publisher"></div>
-    </main>
+<!-- <main> -->
+      <div id="subscriber"></div>
+      <div id="publisher"></div>
+    <!-- </main> -->
 
     <!-- <script src="https://static.opentok.com/v2/js/opentok.min.js"></script> -->
     <script type="text/javascript">
