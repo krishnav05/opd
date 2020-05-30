@@ -29,10 +29,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+
+    Route::get('doctor','ManageAdminController@fetch')->middleware('admin.user');
 });
 
 //custom routes made by developer
 Route::post('otp-send','OtpController@sendOtp');
+
+Route::post('resend-otp','OtpController@resendOtp');
 
 Route::post('otp-verify','OtpController@verifyOtp');
 
@@ -71,3 +75,7 @@ Route::get('video-call',function(){
 });
 
 Route::get('doctor-video-call','DoctorController@connectVideo');
+
+Route::post('video-call-alert','DoctorController@videoCallAlert');
+
+Route::post('end','DoctorController@end');

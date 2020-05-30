@@ -23,4 +23,65 @@
     var id = localStorage.getItem('id');
   IDinfo(id , 'user');
 }, 2000);
+
+@if(auth()->user()->role_id == '2')
+  var patientalert = new Pusher('5cee25784dec312477c7', {
+      authEndpoint: '/broadcasting/auth',
+      encrypted: true,
+      cluster: 'ap2',
+      auth: {
+ 
+        headers: {
+ 
+            'X-CSRF-Token': '{{ csrf_token() }}'
+ 
+        }
+ 
+    }
+    });
+
+    var channel = patientalert.subscribe('private-call-alert');
+    channel.bind('call-alert', function(data) {
+      // alert(JSON.stringify(data));   
+      if(data.alert == 'alert')
+      {
+        $('#pickup-call').modal();
+      }   
+    });
+@endif
+$('#end').on('click',function(){
+  var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+                    /* the route pointing to the post function */
+                    url: "/end",
+                    type: 'POST',
+                    /* send the csrf-token and the input to the controller */
+                    data: {_token: CSRF_TOKEN},
+                    dataType: 'JSON',
+                    /* remind that 'data' is the response of the AjaxController */
+                    success: function (data) {
+                      console.log('success');
+                    }
+                });
+});
+
+$('#video-call').on('click',function(){
+  var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+                    /* the route pointing to the post function */
+                    url: "/video-call-alert",
+                    type: 'POST',
+                    /* send the csrf-token and the input to the controller */
+                    data: {_token: CSRF_TOKEN},
+                    dataType: 'JSON',
+                    /* remind that 'data' is the response of the AjaxController */
+                    success: function (data) {
+                      window.location = '/doctor-video-call';
+                    }
+                });
+});
+
+$('#pick').on('click',function(){
+  window.location = '/patient-video-call';
+});
 </script>

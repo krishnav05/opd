@@ -16,15 +16,15 @@
       <form action="otp-verify" method="POST">
         <div class="form-group mt-4">
           @csrf
-          <input type="hidden" name="number" value="{{$number}}">
-          <input type="text" pattern="\d*" name="pin1" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
-          <input type="text" pattern="\d*" name="pin2" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
-          <input type="text" pattern="\d*" name="pin3" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
-          <input type="text" pattern="\d*" name="pin4" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
+          <input id="phone" type="hidden" name="number" value="{{$number}}">
+          <input type="text" pattern="[0-9]*" name="pin1" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
+          <input type="text" pattern="[0-9]*" name="pin2" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
+          <input type="text" pattern="[0-9]*" name="pin3" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
+          <input type="text" pattern="[0-9]*" name="pin4" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
           <input type="submit" value="get inside" class="btn btn-primary form-control form-control-lg mt-3">
         </div> 
         <div id="opt-timer" class="col-sm-12 text-center mt-3"></div>
-            <a class="col-sm-12 small mt-3  text-center">Resend OTP</a>
+            <a id="resend" class="col-sm-12 small mt-3  text-center">Resend OTP</a>
         </div> 
       </form>
     </div>
@@ -43,6 +43,8 @@
 @section('footer')
 
 <script type="text/javascript">
+
+$(document).ready(function(){
   var timeLeft = 60;
       var elem = document.getElementById('opt-timer');
       var timerId = setInterval(countdown, 1000);
@@ -56,8 +58,8 @@
               timeLeft--;
           }
       }
-
-$(document).ready(function(){
+  
+  
         $('input').keyup(function(event){
           if($(this).val().length==$(this).attr("maxlength") && event.keyCode !== 8){
             $(this).next().focus();
@@ -74,7 +76,29 @@ $(document).ready(function(){
           }
         }
       });
+     $('#resend').on('click',function(){
+  var phone = $('#phone').val();
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
+        $.ajax({
+          /* the route pointing to the post function */
+          url: '/resend-otp',
+          type: 'POST',
+          /* send the csrf-token and the input to the controller */
+          data: {_token: CSRF_TOKEN,phone:phone},
+          dataType: 'JSON',
+          /* remind that 'data' is the response of the AjaxController */
+          success: function (data) {
+            clearTimeout(timerId);
+            timeLeft = 60;
+            elem = document.getElementById('opt-timer');
+            
+            timerId = setInterval(countdown, 1000);
+          }
+        });
+});
       });
+
 </script>
 
 

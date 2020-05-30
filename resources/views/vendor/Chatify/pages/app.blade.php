@@ -76,7 +76,8 @@
                     <a href="#" class="show-infoSide"><i class="fas fa-info-circle"></i></a>
                     @if(auth()->user()->role_id == '1')
                     <!-- add call function here -->
-                    <a href="#" class="show-infoSide" onclick="window.location = '/doctor-video-call';"><i class="fas fa-video"></i></a>
+                    <a href="#" id="video-call" ><i class="fas fa-video"></i></a>
+                    <a href="#" id="end"><i class="far fa-check-circle"></i></a>
                     @endif
                 </nav>
             </nav>

@@ -23,3 +23,8 @@ Broadcast::channel('my-channel', function ($user) {
 Broadcast::channel('patient-channel', function ($user) {
     return true;
 });
+
+Broadcast::channel('call-alert', function ($user) {
+    return true;
+});
+

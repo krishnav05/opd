@@ -22,7 +22,7 @@ const COLOR_CODES = {
   }
 };
 
-const TIME_LIMIT = 20;
+const TIME_LIMIT = 180;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -117,3 +117,24 @@ function setCircleDasharray() {
     .getElementById("base-timer-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
 }
+
+
+
+//code for wait time
+
+// var startTime, endTime;
+
+// function start() {
+//   startTime = performance.now();
+// };
+
+// function end() {
+//   endTime = performance.now();
+//   var timeDiff = endTime - startTime; //in ms 
+//   // strip the ms 
+//   timeDiff /= 1000; 
+  
+//   // get seconds 
+//   var seconds = Math.round(timeDiff);
+//   console.log(seconds + " seconds");
+// }

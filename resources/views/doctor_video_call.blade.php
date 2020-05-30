@@ -1,15 +1,29 @@
 <html>
 <head>
-    <title> OpenTok Getting Started </title>
+    <title> OnlyOPD Video Call </title>
+    <style>
+.subscriber {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+ 
+.publisher {
+  position: absolute;
+  width: 25vmin;
+  height: 25vmin;
+  min-width: 8em;
+  min-height: 8em;
+  align-self: flex-end;
+}
+    </style>
     <script src="https://static.opentok.com/v2/js/opentok.js"></script>
 </head>
 <body>
-
-    <div>SessionKey:</div>
-    <div id="videos">
-        <div id="subscriber"></div>
-        <div id="publisher"></div>
-    </div>
+<main>
+      <div id="subscriber" class="subscriber"></div>
+      <div id="publisher" class="publisher"></div>
+    </main>
 
     <!-- <script src="https://static.opentok.com/v2/js/opentok.min.js"></script> -->
     <script type="text/javascript">

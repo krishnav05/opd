@@ -97,6 +97,45 @@ class OtpController extends Controller
 
     }
 
+    public function resendOtp(Request $request)
+    {
+      $otp = rand(1000,9999);
+            User::where('phone',$request->phone)->update(['otp'=>$otp]);
+            //send message with otp here
+
+            $curl = curl_init();
+
+            curl_setopt_array($curl, array(
+              CURLOPT_URL => "https://2factor.in/API/V1/30a20943-9375-11ea-9fa5-0200cd936042/SMS/".$request->phone."/".$otp,
+              CURLOPT_RETURNTRANSFER => true,
+              CURLOPT_ENCODING => "",
+              CURLOPT_MAXREDIRS => 10,
+              CURLOPT_TIMEOUT => 30,
+              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+              CURLOPT_CUSTOMREQUEST => "GET",
+              CURLOPT_POSTFIELDS => "",
+              CURLOPT_HTTPHEADER => array(
+                "content-type: application/x-www-form-urlencoded"
+              ),
+            ));
+
+            $response = curl_exec($curl);
+            $err = curl_error($curl);
+
+            curl_close($curl);
+
+            if ($err) {
+              echo "cURL Error #:" . $err;
+            } else {
+              // echo $response;
+                $response = array(
+                    'status' => 'success',
+                );
+
+                return response()->json($response);
+            }
+    }
+
     public function verifyOtp(Request $request)
     {
     	$pin = $request->pin1.$request->pin2.$request->pin3.$request->pin4;

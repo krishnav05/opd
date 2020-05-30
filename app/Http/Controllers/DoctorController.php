@@ -8,10 +8,12 @@ use Auth;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use App\Events\NotifyPatient;
+use App\Events\AlertCall;
 use App\Consultations;
 use OpenTok\OpenTok;
 use OpenTok\MediaMode;
 use OpenTok\ArchiveMode;
+use DB;
 
 
 class DoctorController extends Controller
@@ -51,8 +53,10 @@ class DoctorController extends Controller
         // $text = request()->text;
         $check = Consultations::where('patientId',$request->patientid)->where('doctorId',null)->where('completed',null)->first();
         if($check)
-        {
-            Consultations::where('patientId',$request->patientid)->update(['doctorId'=>$id]);
+        {   
+
+            $location = geoip($ip = $request->ip());
+            Consultations::where('patientId',$request->patientid)->where('completed',null)->update(['doctorId'=>$id,'doctor_location'=>$location->city]);
             event(new NotifyPatient($id,$request->patientid));
 
                 $response = array(
@@ -76,7 +80,9 @@ class DoctorController extends Controller
     }
 
     public function getDetails(Request $request)
-    {
+    {   
+        Consultations::where('doctorId',$request->doctorid)->where('completed',null)->update(['wait_time'=>$request->wait_time]);
+
         $name = User::where('id',$request->doctorid)->value('name');
         $avatar = User::where('id',$request->doctorid)->value('avatar');
 
@@ -117,5 +123,35 @@ class DoctorController extends Controller
         $token = $opentok->generateToken($sessionId);
 
         return view('doctor_video_call',['session_id'=>$sessionId,'opentok_token'=>$token]);
+    }
+
+    public function end(Request $request)
+    {   
+        $id = Consultations::where('doctorId',Auth::user()->id)->where('completed',null)->value('id');
+
+        $variable = DB::table('messages')->where('from_id',Auth::user()->id)->orWhere('to_id',Auth::user()->id)->get();
+        foreach ($variable as $value) {
+            # code...
+            $value->consultation_id = $id;
+            DB::table('history_messages')->insert(get_object_vars($value));
+        }
+
+        Consultations::where('doctorId',Auth::user()->id)->where('completed',null)->update(['completed'=>'1']);
+        $response = array(
+                    'success' => 'success',
+                );
+
+        return response()->json($response);           
+    }
+
+    public function videoCallAlert(Request $request)
+    {   
+        $alert = 'alert';
+        event(new AlertCall($alert));
+        $response = array(
+                    'success' => 'success',
+                );
+
+        return response()->json($response);  
     }
 }

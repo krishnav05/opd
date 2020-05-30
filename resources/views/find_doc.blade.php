@@ -40,11 +40,15 @@
    </div>
  </div>
 
+
  @endsection
 
  @section('footer')
 <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
  <script type="text/javascript">
+
+var startTime = performance.now();
+
   var userid;
   $('#findnow').on('click',function(){
     $(this).hide();
@@ -121,12 +125,19 @@
         localStorage.setItem("id", data.doctorid);
       console.log(data.id);
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        var endTime = performance.now();
+  var timeDiff = endTime - window.startTime; //in ms 
+  // strip the ms 
+  timeDiff /= 1000; 
+  
+  // get seconds 
+  var seconds = Math.round(timeDiff);
     $.ajax({
                     /* the route pointing to the post function */
                     url: "doc-details",
                     type: 'POST',
                     /* send the csrf-token and the input to the controller */
-                    data: {_token: CSRF_TOKEN ,doctorid:data.doctorid},
+                    data: {_token: CSRF_TOKEN ,doctorid:data.doctorid,wait_time:seconds},
                     dataType: 'JSON',
                     /* remind that 'data' is the response of the AjaxController */
                     success: function (data) { 
