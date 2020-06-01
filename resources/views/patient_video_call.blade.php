@@ -1,10 +1,37 @@
-@section('content')
+<html>
+<head>
+    <title> OnlyOPD Video Call </title>
+    <style>
+    .his-video{
+position: absolute;
+width: 35vw;
+height: 12vh;
+overflow: hidden;
+background: #333;
+display: block;
+top: 20px;
+right: 20px;
+border:1px solid #FF9800;
+}.my-video{
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+      display: block;
+     }
+    </style>
+    <script src="https://static.opentok.com/v2/js/opentok.js"></script>
+</head>
+<body>
+    <!-- <main> -->
       <div id="subscriber" class="my-video"></div>
       <div id="publisher" class="his-video"></div>
-@endsection
-@section('footer')
-<script src="https://static.opentok.com/v2/js/opentok.js"></script>
-  <script type="text/javascript">
+    <!-- </main> -->
+        
+
+    <!-- <script src="https://static.opentok.com/v2/js/opentok.min.js"></script> -->
+    <script type="text/javascript">
 
     var token = '{{ $opentok_token }}';
     var sessionId = '{{ $session_id }}';
@@ -52,4 +79,5 @@ function initializeSession() {
   });
 }
     </script>
-@endsection
+</body>
+</html>
