@@ -16,7 +16,12 @@ class OtpController extends Controller
     		'phone' => 'required|numeric|digits:10',
     	]);
 
-    	$check = User::where('phone',$validatedData['phone'])->where('enable',1)->first();
+    	$check = User::where('phone',$validatedData['phone'])->first();
+
+      if($check['enable'] == 0)
+      {
+        return redirect()->back();
+      }
 
     	if($check)
     	{
@@ -189,5 +194,23 @@ class OtpController extends Controller
       {
         Auth::user()->increment('credits',1);
       }
+    }
+
+
+    public function index()
+    { 
+      if(Auth::user())
+      {
+        if(Auth::user()->role_id == 2)
+        {
+          return redirect()->route('find.doctor');
+        }
+        else
+        {
+          return redirect()->route('pickup');
+        }
+      }
+      else
+        return view('otp_login_page');
     }
 }

@@ -61,6 +61,7 @@ $('#end').on('click',function(){
                     /* remind that 'data' is the response of the AjaxController */
                     success: function (data) {
                       console.log('success');
+                      window.location = '/call-pickup';
                     }
                 });
 });

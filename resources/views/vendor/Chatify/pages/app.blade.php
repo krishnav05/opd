@@ -74,7 +74,7 @@
                     <!-- <a href="#" class="add-to-favorite"><i class="fas fa-star"></i></a> -->
                     <!-- <a href="{{ route('home') }}"><i class="fas fa-home"></i></a> -->
                     <a href="#" class="show-infoSide"><i class="fas fa-info-circle"></i></a>
-                    @if(auth()->user()->role_id == '1')
+                    @if(auth()->user()->role_id == '3')
                     <!-- add call function here -->
                     <a href="#" id="video-call" ><i class="fas fa-video"></i></a>
                     <a href="#" id="end"><i class="far fa-check-circle"></i></a>

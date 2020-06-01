@@ -434,7 +434,25 @@ a:hover{
 
 
 
-
+.my-video{
+			position: relative;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+			background: #000;
+			display: block;
+		 }
+.his-video{
+			position: absolute;
+			width: 35vw;
+			height: 12vh;
+			overflow: hidden;
+			background: #333;
+			display: block;
+			top: 20px;
+			right: 20px;
+			border:1px solid #FF9800;
+		  }
 
 
 

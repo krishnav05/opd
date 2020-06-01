@@ -136,6 +136,7 @@ class DoctorController extends Controller
             DB::table('history_messages')->insert(get_object_vars($value));
         }
 
+        DB::table('messages')->where('from_id',Auth::user()->id)->orWhere('to_id',Auth::user()->id)->delete();
         Consultations::where('doctorId',Auth::user()->id)->where('completed',null)->update(['completed'=>'1']);
         $response = array(
                     'success' => 'success',

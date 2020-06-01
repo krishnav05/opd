@@ -14,9 +14,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('otp_login_page');
-});
+Route::get('/','OtpController@index');
 
 Auth::routes([
   'register' => false, // Registration Routes...
@@ -93,3 +91,14 @@ Route::get('doctor-video-call','DoctorController@connectVideo');
 Route::post('video-call-alert','DoctorController@videoCallAlert');
 
 Route::post('end','DoctorController@end');
+
+Route::get('try',function(){
+  return view('try');
+});
+
+
+// history
+
+Route::get('history/{id}','HistoryController@getHistory')->middleware('auth.custom');
+
+Route::get('history','HistoryController@getConsultations')->middleware('auth.custom');

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="robots" content="noindex, nofollow" />
   <meta name="csrf-token" content="{{ csrf_token() }}">
-
+  @yield('css')
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;500&display=swap" rel="stylesheet"> 
@@ -18,9 +18,9 @@
   <header>
     <div class="fluid-container">
       <div class="row m-0">
-        <div class="col text-left pl-0"> <a class="fa fa-history fa-2x text-center" href=""> <span class="d-block">History</span> </a> </div>
-        <div class="col text-center"> <a href="" onclick="return false;" class="logo"> only<span>OPD</span> </a> </div>
-        <div class="col text-right pr-0"> <a class="credit text-center" href="credits"> <span class="
+        <div class="col text-left pl-0"> <a class="fa fa-history fa-2x text-center" href="/history"> <span class="d-block">History</span> </a> </div>
+        <div class="col text-center"> <a href="/" class="logo"> only<span>OPD</span> </a> </div>
+        <div class="col text-right pr-0"> <a class="credit text-center" href="" onclick="return false;"> <span class="
           credit-box">@if(isset($credit)) {{$credit}} @else 0 @endif</span> <span class="d-block">Credits</span> </a> </div>
         </div>
       </div>
