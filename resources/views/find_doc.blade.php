@@ -144,7 +144,7 @@ var startTime = performance.now();
                        // window.userid = data.id;
                        // alert(window.userid);
                        $('#doc-name').append(data.name);
-                       $('#doc-image').attr('src','/storage/users-avatar/'+data.image).width('120px').height('100px');
+                       $('#doc-image').attr('src','/storage/doctors/'+data.image).width('120px').height('100px');
                        $('#find-doc').modal();
                     }
                 });
