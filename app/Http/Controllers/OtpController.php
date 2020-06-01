@@ -18,13 +18,12 @@ class OtpController extends Controller
 
     	$check = User::where('phone',$validatedData['phone'])->first();
 
-      if($check['enable'] == 0)
+    	if($check)
+    	{
+        if($check['enable'] == 0)
       {
         return redirect()->back();
       }
-
-    	if($check)
-    	{
     		$otp = rand(1000,9999);
             User::where('phone',$validatedData['phone'])->update(['otp'=>$otp]);
             //send message with otp here
