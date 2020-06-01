@@ -77,7 +77,8 @@ body{
     padding-top: 15px;
     height: calc(100% - 90px);
     overflow-x: hidden;
-    overflow-y: auto;
+    /*overflow-y: auto;*/
+    overflow-y: hidden;
 }
 .m-header{
 	padding: 10px 15px;
@@ -530,7 +531,8 @@ body{
   transform: scale(.9);
 }
 .messengerColor-1{
-  background-color: #2180f3;
+  /*background-color: #2180f3;*/
+  background-color: #255985;
 }
 .messengerColor-2{
   background-color: #2196F3;

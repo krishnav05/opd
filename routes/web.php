@@ -31,6 +31,20 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
     Route::get('doctor','ManageAdminController@fetch')->middleware('admin.user');
+
+    Route::post('doctor','ManageAdminController@addDoctor')->middleware('admin.user');
+
+    Route::get('doctors','ManageAdminController@getDoctors')->middleware('admin.user');
+
+    Route::get('patients','ManageAdminController@getPatients')->middleware('admin.user');
+
+    Route::get('patients/{number}','ManageAdminController@viewPatient')->middleware('admin.user');
+
+    Route::post('addCredits','ManageAdminController@updateCredits')->middleware('admin.user');
+
+    Route::get('enable/{number}','ManageAdminController@enableAccount')->middleware('admin.user');
+
+    Route::get('disable/{number}','ManageAdminController@disableAccount')->middleware('admin.user');
 });
 
 //custom routes made by developer

@@ -16,7 +16,7 @@ class OtpController extends Controller
     		'phone' => 'required|numeric|digits:10',
     	]);
 
-    	$check = User::where('phone',$validatedData['phone'])->first();
+    	$check = User::where('phone',$validatedData['phone'])->where('enable',1)->first();
 
     	if($check)
     	{
