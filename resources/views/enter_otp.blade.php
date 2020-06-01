@@ -17,10 +17,10 @@
         <div class="form-group mt-4">
           @csrf
           <input id="phone" type="hidden" name="number" value="{{$number}}">
-          <input type="text" pattern="[0-9]*" name="pin1" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
-          <input type="text" pattern="[0-9]*" name="pin2" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
-          <input type="text" pattern="[0-9]*" name="pin3" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
-          <input type="text" pattern="[0-9]*" name="pin4" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
+          <input type="number" pattern="[0-9]*" name="pin1" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
+          <input type="number" pattern="[0-9]*" name="pin2" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
+          <input type="number" pattern="[0-9]*" name="pin3" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
+          <input type="number" pattern="[0-9]*" name="pin4" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
           <input type="submit" value="get inside" class="btn btn-primary form-control form-control-lg mt-3">
         </div> 
         <div id="opt-timer" class="col-sm-12 text-center mt-3"></div>
