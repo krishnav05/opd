@@ -126,22 +126,22 @@ function initializeSession() {
   var publisher = OT.initPublisher('publisher', publisherOptions, handleError);
 
   $('.ic-mute-call').on('click',function(){
-    this.addClass('active');
+    $('.ic-mute-call').addClass('active');
     publisher.publishAudio(false);
   });
 
-  $('.ic-mute-call .active').on('click',function(){
-    this.removeClass('active');
+  $('.ic-mute-call.active').on('click',function(){
+    $('.ic-mute-call.active').removeClass('active');
     publisher.publishAudio(true);
   });
 
   $('.ic-off-video-call').on('click',function(){
-    this.addClass('active');
+    $('.ic-off-video-call').addClass('active');
     publisher.publishVideo(false);
   });
 
-  $('.ic-off-video-call .active').on('click',function(){
-    this.removeClass('active');
+  $('.ic-off-video-call.active').on('click',function(){
+    $('.ic-off-video-call.active').removeClass('active');
     publisher.publishVideo(true);
   });
 

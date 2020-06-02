@@ -76,9 +76,9 @@ border:1px solid #FF9800;
       <div id="publisher" class="his-video"></div>
     <!-- </main> -->
         <div class="video-call-action">
-      <a href="" class="ic-mute-call"> <i class="fa fa-microphone-slash"></i> </a>
-      <a href="" class="ic-end-call"> <i class="fa fa-phone"></i> </a>
-      <a href="" class="ic-off-video-call"> <i class="fa fa-video-camera"></i> </a>
+      <a class="ic-mute-call"> <i class="fa fa-microphone-slash"></i> </a>
+      <a class="ic-end-call"> <i class="fa fa-phone"></i> </a>
+      <a class="ic-off-video-call"> <i class="fa fa-video-camera"></i> </a>
 
     </div>
 
@@ -125,22 +125,22 @@ function initializeSession() {
   var publisher = OT.initPublisher('publisher', publisherOptions, handleError);
 
   $('.ic-mute-call').on('click',function(){
-    this.addClass('active');
+    $('.ic-mute-call').addClass('active');
     publisher.publishAudio(false);
   });
 
-  $('.ic-mute-call .active').on('click',function(){
-    this.removeClass('active');
+  $('.ic-mute-call.active').on('click',function(){
+    $('.ic-mute-call.active').removeClass('active');
     publisher.publishAudio(true);
   });
 
   $('.ic-off-video-call').on('click',function(){
-    this.addClass('active');
+    $('.ic-off-video-call').addClass('active');
     publisher.publishVideo(false);
   });
 
-  $('.ic-off-video-call .active').on('click',function(){
-    this.removeClass('active');
+  $('.ic-off-video-call.active').on('click',function(){
+    $('.ic-off-video-call.active').removeClass('active');
     publisher.publishVideo(true);
   });
 
