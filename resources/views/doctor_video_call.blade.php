@@ -20,7 +20,54 @@ border:1px solid #FF9800;
       background: #000;
       display: block;
      }
+     .video-call-action{
+          position: absolute;
+          bottom: 20px;
+          width: 100%;
+          padding: 14px;
+          text-align: center;
+          }
+.ic-mute-call{
+        width: 45px;
+        height: 45px;
+        background: #ccc;
+        color: #999;
+        border-radius: 100%;
+        text-align: center;
+        padding: 12px;
+        margin: 0 10px;
+        display: inline-block;
+      }
+.ic-mute-call.active{
+            color: #333 !important;
+          }
+.ic-end-call{
+        width: 45px;
+        height: 45px;
+        background: #D32F2F;
+        color: #fff;
+        border-radius: 100%;
+        text-align: center;
+        padding: 12px;
+        margin: 0 10px;
+        display: inline-block;
+      }
+.ic-off-video-call{
+        width: 45px;
+        height: 45px;
+        background: #ccc;
+        color: #999;
+        border-radius: 100%;
+        text-align: center;
+        padding: 12px;
+        margin: 0 10px;
+        display: inline-block;  
+      }
+.ic-off-video-call.active{
+            color: #333 !important;
+          }
     </style>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://static.opentok.com/v2/js/opentok.js"></script>
 </head>
 <body>
@@ -28,10 +75,19 @@ border:1px solid #FF9800;
       <div id="subscriber" class="my-video"></div>
       <div id="publisher" class="his-video"></div>
     <!-- </main> -->
+    <div class="video-call-action">
+      <a href="" class="ic-mute-call"> <i class="fa fa-microphone-slash"></i> </a>
+      <a href="" class="ic-end-call"> <i class="fa fa-phone"></i> </a>
+      <a href="" class="ic-off-video-call"> <i class="fa fa-video-camera"></i> </a>
 
+    </div>
 
 
     <!-- <script src="https://static.opentok.com/v2/js/opentok.min.js"></script> -->
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
     <script type="text/javascript">
 
     var token = '{{ $opentok_token }}';
@@ -68,6 +124,30 @@ function initializeSession() {
     height: '100%'
   };
   var publisher = OT.initPublisher('publisher', publisherOptions, handleError);
+
+  $('.ic-mute-call').on('click',function(){
+    this.addClass('active');
+    publisher.publishAudio(false);
+  });
+
+  $('.ic-mute-call .active').on('click',function(){
+    this.removeClass('active');
+    publisher.publishAudio(true);
+  });
+
+  $('.ic-off-video-call').on('click',function(){
+    this.addClass('active');
+    publisher.publishVideo(false);
+  });
+
+  $('.ic-off-video-call .active').on('click',function(){
+    this.removeClass('active');
+    publisher.publishVideo(true);
+  });
+
+  $('.ic-end-call').on('click',function(){
+    window.location = '/chatify';
+  });
 
   // Connect to the session
   session.connect(token, function callback(error) {

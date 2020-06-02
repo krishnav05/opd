@@ -77,7 +77,7 @@
                     @if(auth()->user()->role_id == '3')
                     <!-- add call function here -->
                     <a href="#" id="video-call" ><i class="fas fa-video"></i></a>
-                    <a href="#" id="end"><i class="far fa-check-circle"></i></a>
+                    <a href="#" id="end"><i class="far fa-times-circle"></i></a>
                     @endif
                 </nav>
             </nav>
