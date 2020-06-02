@@ -129,6 +129,8 @@ class DoctorController extends Controller
     {   
         $id = Consultations::where('doctorId',Auth::user()->id)->where('completed',null)->value('id');
 
+        $patientid = Consultations::where('doctorId',Auth::user()->id)->where('completed',null)->value('patientId');
+
         $variable = DB::table('messages')->where('from_id',Auth::user()->id)->orWhere('to_id',Auth::user()->id)->get();
         foreach ($variable as $value) {
             # code...
@@ -138,6 +140,8 @@ class DoctorController extends Controller
 
         DB::table('messages')->where('from_id',Auth::user()->id)->orWhere('to_id',Auth::user()->id)->delete();
         Consultations::where('doctorId',Auth::user()->id)->where('completed',null)->update(['completed'=>'1']);
+
+        User::where('id',$patientid)->decrement('credits');
         $response = array(
                     'success' => 'success',
                 );

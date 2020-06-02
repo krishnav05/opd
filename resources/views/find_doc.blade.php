@@ -145,7 +145,10 @@ var startTime = performance.now();
                        // alert(window.userid);
                        $('#doc-name').append(data.name);
                        $('#doc-image').attr('src','/storage/doctors/'+data.image).width('120px').height('100px');
-                       $('#find-doc').modal();
+                       $('#find-doc').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
                     }
                 });
       // window.location = '/chatify';

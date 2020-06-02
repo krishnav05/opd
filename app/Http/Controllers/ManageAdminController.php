@@ -35,7 +35,7 @@ class ManageAdminController extends Controller
     		'password' => 'required',
     	]);
     	$photoName = time().'.'.$request->photo->getClientOriginalExtension();
-    	$request->photo->move(public_path('/storage/doctors/'), $photoName);
+    	$request->photo->move(public_path('/storage/user-avatar/'), $photoName);
 
     	$new = new User;
     	$new->name = $validatedData['doctor_name'];

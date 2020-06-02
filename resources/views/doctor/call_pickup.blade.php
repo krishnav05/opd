@@ -24,6 +24,9 @@
           <div class="sonar-wrapper">
             <div class="sonar-emitter"><a href="#" class="fa fa-phone fa-2x"></a>
               <div class="sonar-wave"></div>
+              <audio id="audio" loop="loop" class="">
+                <source src="/assets/img/doctor-doctor.mp3" type="audio/mp3">
+              </audio>
             </div>
           </div>
        </div>
@@ -85,7 +88,11 @@
     var channel = pusher.subscribe('private-my-channel');
     channel.bind('notify-doctor', function(data) {
       // alert(JSON.stringify(data));
-      $('#pickup-call').modal();
+      $('#pickup-call').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+      $('#audio')[0].play();
       localStorage.setItem("id",data.id);
       window.patientid = data.id;
     });

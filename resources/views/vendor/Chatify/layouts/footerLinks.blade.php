@@ -19,10 +19,14 @@
   // messenger = "{{ @$id }}";
     messenger = "user_"+localStorage.getItem('id');
   
-  setTimeout(function() {
+//   setTimeout(function() {
+    
+// }, 2000);
+  window.addEventListener("load", function(){
     var id = localStorage.getItem('id');
   IDinfo(id , 'user');
-}, 2000);
+});
+
 
 @if(auth()->user()->role_id == '2')
   var patientalert = new Pusher('5cee25784dec312477c7', {
@@ -45,7 +49,10 @@
       // alert(JSON.stringify(data));   
       if(data.alert == 'alert')
       {
-        $('#pickup-call').modal();
+        $('#pickup-call').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
       }   
     });
 @endif

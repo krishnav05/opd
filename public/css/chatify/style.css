@@ -52,7 +52,8 @@ body{
 	z-index: 1;
 	background: transparent;
   width: 45%;
-  min-width: 200px;
+  min-width: 0px;
+  max-width: 1px;
   overflow: auto;
 }
 .messenger-listView .m-header{

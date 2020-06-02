@@ -21,7 +21,7 @@
         <div class="col text-left pl-0"> <a class="fa fa-history fa-2x text-center" href="/history"> <span class="d-block">History</span> </a> </div>
         <div class="col text-center"> <a href="/" class="logo"> only<span>OPD</span> </a> </div>
         <div class="col text-right pr-0"> <a class="credit text-center" href="" onclick="return false;"> <span class="
-          credit-box">@if(isset($credit)) {{$credit}} @else 0 @endif</span> <span class="d-block">Credits</span> </a> </div>
+          credit-box">@if(Auth::check() && Auth::user()->role_id == 3) <img src="/storage/doctors/{{Auth::user()->avatar}}" style="border-radius: 50%; height: 40px; width: 40px;" > image @else @if(isset($credit)) {{$credit}} @else 0 @endif @endif</span> <span class="d-block">@if(Auth::check() && Auth::user()->role_id == 3) @else Credits @endif</span> </a> </div>
         </div>
       </div>
     </header>
