@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/','OtpController@index');
+Route::get('/','OtpController@index')->name('home');
 
 Auth::routes([
   'register' => false, // Registration Routes...
@@ -22,7 +22,7 @@ Auth::routes([
   'verify' => false, // Email Verification Routes...
 ]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -52,19 +52,19 @@ Route::post('resend-otp','OtpController@resendOtp');
 
 Route::post('otp-verify','OtpController@verifyOtp');
 
-Route::post('dopayment', 'Patient\RazorpayController@dopayment')->name('dopayment')->middleware('auth.custom');
+Route::post('dopayment', 'Patient\RazorpayController@dopayment')->name('dopayment')->middleware('auth.custom','patient');
 
-Route::post('addcredits','OtpController@add')->middleware('auth.custom');
+Route::post('addcredits','OtpController@add')->middleware('auth.custom','patient');
 
-Route::post('find-doc','FindController@alertDoctor')->middleware('auth.custom');
+Route::post('find-doc','FindController@alertDoctor')->middleware('auth.custom','patient');
 
-Route::get('find-doc','FindController@index')->middleware('auth.custom')->name('find.doctor');
+Route::get('find-doc','FindController@index')->middleware('auth.custom','patient')->name('find.doctor');
 
 Route::get('contact-us','ContactUsController@index');
 
 Route::post('contact-details','ContactUsController@update');
 
-Route::get('credits','FindController@addCredits')->middleware('auth.custom')->name('credits');
+Route::get('credits','FindController@addCredits')->middleware('auth.custom','patient')->name('credits');
 
 //doctor login
 
@@ -72,33 +72,24 @@ Route::get('doctorlogin','DoctorController@loginPage');
 
 Route::post('doc-login','DoctorController@login');
 
-Route::get('call-pickup','DoctorController@callPickup')->name('pickup');
+Route::get('call-pickup','DoctorController@callPickup')->name('pickup')->middleware('auth.custom','doctor');
 
-Route::post('call-pickup','DoctorController@alertPatient');
+Route::post('call-pickup','DoctorController@alertPatient')->middleware('auth.custom');
 
-Route::post('doc-details','DoctorController@getDetails');
+Route::post('doc-details','DoctorController@getDetails')->middleware('auth.custom');
 
 
 //video test routes
-Route::get('patient-video-call','PatientController@connectVideo');
+Route::get('patient-video-call','PatientController@connectVideo')->middleware('auth.custom','patient');
 
-Route::get('video-call',function(){
-	return view('video_call');
-});
+Route::get('doctor-video-call','DoctorController@connectVideo')->middleware('auth.custom','doctor');
 
-Route::get('doctor-video-call','DoctorController@connectVideo');
+Route::post('video-call-alert','DoctorController@videoCallAlert')->middleware('auth.custom','doctor');
 
-Route::post('video-call-alert','DoctorController@videoCallAlert');
-
-Route::post('end','DoctorController@end');
-
-Route::get('try',function(){
-  return view('try');
-});
-
+Route::post('end','DoctorController@end')->middleware('auth.custom','doctor');
 
 // history
 
-Route::get('history/{id}','HistoryController@getHistory')->middleware('auth.custom');
+Route::get('history/{id}','HistoryController@getHistory')->middleware('auth.custom','patient');
 
-Route::get('history','HistoryController@getConsultations')->middleware('auth.custom');
+Route::get('history','HistoryController@getConsultations')->middleware('auth.custom','patient');
