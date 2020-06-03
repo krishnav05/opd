@@ -21,21 +21,21 @@
               <label class="form-check-label" for="exampleRadios1">
                 1 Consultation <p> Chat, audio & video consultation now. </p>
               </label>
-              <span class="fee"> ₹99 <br> <b>₹200</b></span>
+              <span class="fee"> ₹99 <br> <b>₹250</b></span>
             </li>
             <li> 
-              <input class="form-check-input" type="radio" name="amount" id="exampleRadios1" value="175" checked>
+              <input class="form-check-input" type="radio" name="amount" id="exampleRadios1" value="175">
               <label class="form-check-label" for="exampleRadios1">
                 2 Consultation <p> Chat, audio & video consultation now. </p>
               </label>
-              <span class="fee"> ₹175 <br> <b>₹400</b></span>
+              <span class="fee"> ₹175 <br> <b>₹500</b></span>
             </li>
             <li> 
-              <input class="form-check-input" type="radio" name="amount" id="exampleRadios1" value="450" checked>
+              <input class="form-check-input" type="radio" name="amount" id="exampleRadios1" value="400">
               <label class="form-check-label" for="exampleRadios1">
                 5 Consultation <p> Chat, audio & video consultation now. </p>
               </label>
-              <span class="fee"> ₹450 <br> <b>₹1000</b></span>
+              <span class="fee"> ₹400 <br> <b>₹1000</b></span>
             </li>
           </ul>
           <input id="paynow" type="button" value="Select payment method" class="btn btn-primary form-control form-control-lg mt-3">

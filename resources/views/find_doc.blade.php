@@ -13,12 +13,12 @@
   <div id="app" class="col">
     
   </div>
-  <div class="col otp-card">
-      <h1>Enter Your Phone Number</h1>
-      
-    </div>
-  <input id="findnow" type="button" value="Consult Doctor Now" class="btn btn-primary form-control form-control-lg mt-3">
+  <div id="card" class="col otp-card" style="text-align: center;">
+      <h6>You have <strong style="color: black;">{{$credit}} credit.</strong></h6>
+      <input id="findnow" type="button" value="Consult Doctor Now" class="btn btn-primary form-control form-control-lg mt-3">
   <div id="divs" style="display: none;"><h1 class="text-center mb-4">hang on! <br> finding a doctor for you</h1 class="text-center"></div>
+    </div>
+  
 
     
   </div>

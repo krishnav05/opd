@@ -9,8 +9,8 @@
       <img src="{{asset('assets/img/hero-mobile-otp.svg')}}" class="img-fluid mt-3 ">
     </div>
   </div>
-
- <input id="available" type="button" value="Available To Take Calls" class="btn btn-primary form-control form-control-lg mt-3">
+  <div style="text-align: center;">You are <strong id="text_avail" style="color: black;">Available</strong> to take calls.</div>
+ <input id="available" type="button" value="CHANGE STATUS" class="btn btn-primary form-control form-control-lg mt-3">
   
 </div>
 
@@ -43,6 +43,9 @@
     <div class="modal-content animate-bottom">
       
       <div class="modal-body pick-call-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
        <h1 class="text-center mb-3"> Are you available to <br> take calls? </h1>
        <div class="m-auto text-center">
           <div class="button b2" id="button-10">
@@ -68,7 +71,14 @@
 <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
 <script>
   $('#button-10').on('click',function(){
-    alert($('#check').is(":checked"));
+    // alert($('#check').is(":checked"));
+    if($('#check').is(":checked") == true)
+    {
+      $('#text_avail').html('').html('Not Available').css("color","red");
+    }
+    else
+      $('#text_avail').html('').html('Available').css("color","black");
+
   });
 	var patientid;
     // Enable pusher logging - don't include this in production

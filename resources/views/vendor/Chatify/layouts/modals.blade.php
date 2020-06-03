@@ -82,7 +82,7 @@
     <div class="modal-content animate-bottom" style="width: 87%;">
       
       <div class="modal-body">
-       <h1 class="text-center mb-3"> Tap to Answer </h1>
+       <h1 class="text-center mb-3"> Doctor Is Calling </h1>
        <div class="m-auto text-center">
           <div class="sonar-wrapper">
             <div class="sonar-emitter" style="padding-top: 13px;display: inline-block;"><a href="#" class="fa fa-phone fa-2x"></a>
@@ -91,7 +91,7 @@
           </div>
        </div>
        <input id="pick" type="button" formaction="" name="" value="Pickup" class="btn btn-primary form-control form-control-lg mt-3">
-      
+      <h4 class="text-center mt-3">Doctor would like to initiate Audio & Video Call. Please allow access to your camera & microphone.</h4>
       </div>
     
     </div>

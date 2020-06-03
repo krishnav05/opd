@@ -23,7 +23,7 @@
           <input type="text" inputmode="numeric" pattern="[0-9]*" name="pin4" size="1" minlength="1" maxlength="1"  class="col form-control form-control-lg opt-in ">
           <input type="submit" value="get inside" class="btn btn-primary form-control form-control-lg mt-3">
         </div> 
-        <div id="opt-timer" class="col-sm-12 text-center mt-3"></div>
+        <div id="opt-timer" class="col-sm-12 text-center mt-3 js-timeout">2:00</div>
             <a id="resend" class="col-sm-12 small mt-3  text-center">Resend OTP</a>
         </div> 
       </form>
@@ -45,19 +45,53 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
-  var timeLeft = 60;
-      var elem = document.getElementById('opt-timer');
-      var timerId = setInterval(countdown, 1000);
+  var interval;
 
-      function countdown() {
-          if (timeLeft == -1) {
-              clearTimeout(timerId);
-              doSomething();
-          } else {
-              elem.innerHTML = timeLeft + ' seconds remaining';
-              timeLeft--;
-          }
+function countdown() {
+  clearInterval(interval);
+  interval = setInterval( function() {
+      var timer = $('.js-timeout').html();
+      timer = timer.split(':');
+      var minutes = timer[0];
+      var seconds = timer[1];
+      seconds -= 1;
+      if (minutes < 0) return;
+      else if (seconds < 0 && minutes != 0) {
+          minutes -= 1;
+          seconds = 59;
       }
+      else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
+
+      $('.js-timeout').html(minutes + ':' + seconds);
+
+      if (minutes == 0 && seconds == 0) clearInterval(interval);
+  }, 1000);
+}
+
+$('#js-startTimer').click(function () {
+  $('.js-timeout').text("2:00");
+  countdown();
+});
+
+$('#js-resetTimer').click(function () {
+  $('.js-timeout').text("2:00");
+  clearInterval(interval);
+});
+  countdown();
+
+  // var timeLeft = 60;
+  //     var elem = document.getElementById('opt-timer');
+  //     var timerId = setInterval(countdown, 1000);
+
+  //     function countdown() {
+  //         if (timeLeft == -1) {
+  //             clearTimeout(timerId);
+  //             doSomething();
+  //         } else {
+  //             elem.innerHTML = timeLeft + ' seconds remaining';
+  //             timeLeft--;
+  //         }
+  //     }
   
   
         $('input').keyup(function(event){
@@ -89,11 +123,14 @@ $(document).ready(function(){
           dataType: 'JSON',
           /* remind that 'data' is the response of the AjaxController */
           success: function (data) {
-            clearTimeout(timerId);
-            timeLeft = 60;
-            elem = document.getElementById('opt-timer');
+            // clearTimeout(timerId);
+            // timeLeft = 60;
+            // elem = document.getElementById('opt-timer');
             
-            timerId = setInterval(countdown, 1000);
+            // timerId = setInterval(countdown, 1000);
+            $('.js-timeout').text("2:00");
+  clearInterval(interval);
+  countdown();
           }
         });
 });

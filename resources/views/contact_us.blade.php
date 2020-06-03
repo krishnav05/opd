@@ -8,9 +8,7 @@
     <div class="col otp-card">
       @if (\Session::has('success'))
     <div class="alert alert-success">
-        <ul>
-            <li>{!! \Session::get('success') !!}</li>
-        </ul>
+      {!! \Session::get('success') !!}
     </div>
 @endif
       <h1>Your Information</h1>
@@ -24,8 +22,10 @@
           <input type="email" name="email"  class="form-control form-control-lg mt-4" placeholder="Email Address">
 
           <select class="form-control form-control-lg mt-4" name="option" required>
-            <option value="Apply For Doctor">Apply for Doctor</option>
-            <option value="Help Others">Help Others</option>
+            <option value="I did not receive my credit">I did not receive my credit</option>
+            <option value="Issue with my consultation">Issue with my consultation</option>
+            <option value="Register as doctor">Register as doctor</option>
+            <option value="Others">Others</option>
           </select>
           
          
