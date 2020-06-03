@@ -76,9 +76,9 @@ border:1px solid #FF9800;
       <div id="publisher" class="his-video"></div>
     <!-- </main> -->
     <div class="video-call-action">
-      <a href="" class="ic-mute-call"> <i class="fa fa-microphone-slash"></i> </a>
-      <a href="" class="ic-end-call"> <i class="fa fa-phone"></i> </a>
-      <a href="" class="ic-off-video-call"> <i class="fa fa-video-camera"></i> </a>
+      <a class="ic-mute-call"> <i class="fa fa-microphone-slash"></i> </a>
+      <a class="ic-end-call"> <i class="fa fa-phone"></i> </a>
+      <a class="ic-off-video-call"> <i class="fa fa-video-camera"></i> </a>
 
     </div>
 

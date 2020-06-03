@@ -14,7 +14,7 @@
     
   </div>
   <input id="findnow" type="button" value="Consult Doctor Now" class="btn btn-primary form-control form-control-lg mt-3">
-  <div style="display: none;"><h1 class="text-center mb-4">hang on! <br> finding a doctor for you</h1 class="text-center"></div>
+  <div id="divs" style="display: none;"><h1 class="text-center mb-4">hang on! <br> finding a doctor for you</h1 class="text-center"></div>
 
     
   </div>
@@ -92,6 +92,7 @@ var startTime = performance.now();
       )}</span>
     </div>
     `;
+    const TIME_LIMIT = 20;
     startTimer();
     // setTimeout(function() {
     //   $('#find-doc').modal();
@@ -144,7 +145,7 @@ var startTime = performance.now();
                        // window.userid = data.id;
                        // alert(window.userid);
                        $('#doc-name').append(data.name);
-                       $('#doc-image').attr('src','/storage/doctors/'+data.image).width('120px').height('100px');
+                       $('#doc-image').attr('src','/storage/users-avatar/'+data.image).width('120px').height('100px');
                        $('#find-doc').modal({
             backdrop: 'static',
             keyboard: false
