@@ -14,7 +14,10 @@ class FindController extends Controller
 {
     public function index(Request $request)
     {   $credit = Auth::user()->credits;
-
+        if($credit == 0)
+        {
+            return redirect()->route('credits');
+        }
     	return view('find_doc',['credit' => $credit]);
     }
 
