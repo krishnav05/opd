@@ -30,10 +30,18 @@ class FindController extends Controller
     	// $text = request()->text;
         $location = geoip($ip = $request->ip());
 
-        $new = new Consultations;
+        $check = Consultations::where('patientId',$id)->where('completed',null)->first();
+        if($check)
+        {
+
+        }
+        else{
+            $new = new Consultations;
         $new->patientId = $id;
         $new->patient_location = $location->city;
         $new->save();
+        }
+        
 
 		event(new NotifyDoctor($id));
 
