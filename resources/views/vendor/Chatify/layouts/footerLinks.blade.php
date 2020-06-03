@@ -53,6 +53,7 @@
             backdrop: 'static',
             keyboard: false
         });
+        $('#audio')[0].play();
       } 
       if(data.alert == 'end' && data.id == window.id)
       {
