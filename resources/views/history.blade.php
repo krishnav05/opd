@@ -29,17 +29,23 @@
 <style type="text/css">
      /* Chat containers */
 .container {
+  width: 90%;
+  padding-right: 15px;
+  padding-left: 15px;
   border: 2px solid #dedede;
-  background-color: #f1f1f1;
+  background-color: #fff;
   border-radius: 5px;
   padding: 10px;
-  margin: 10px 0;
+  margin: 20px;
+  border: 2px solid #dedede;
+  bac
 }
 
 /* Darker chat container */
 .darker {
-  border-color: #ccc;
-  background-color: #ddd;
+  border-color: #255985;
+  background-color: #255985;
+  color: #fff;
 }
 
 /* Clear floats */

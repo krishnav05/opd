@@ -1,8 +1,9 @@
 
 
+  $('#findnow').on('click',function(){
+    $(this).hide();
+    $(this).next('div').show();
 
-//Doc waiting time
-// Credit: Mateusz Rybczonec
 
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
@@ -10,10 +11,10 @@ const ALERT_THRESHOLD = 5;
 
 const COLOR_CODES = {
   info: {
-    color: "red"
+    color: "green"
   },
   warning: {
-    color: "orange",
+    color: "green",
     threshold: WARNING_THRESHOLD
   },
   alert: {
@@ -120,6 +121,55 @@ function setCircleDasharray() {
     .getElementById("base-timer-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
 }
+
+
+
+
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+                    /* the route pointing to the post function */
+                    url: "find-doc",
+                    type: 'POST',
+                    /* send the csrf-token and the input to the controller */
+                    data: {_token: CSRF_TOKEN},
+                    dataType: 'JSON',
+                    /* remind that 'data' is the response of the AjaxController */
+                    success: function (data) { 
+                       window.userid = data.id;
+                       // alert(window.userid);
+                    }
+                });
+
+    document.getElementById("app").innerHTML = `
+    <div class="base-timer">
+    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g class="base-timer__circle">
+    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+    <path
+    id="base-timer-path-remaining"
+    stroke-dasharray="283"
+    class="base-timer__path-remaining ${remainingPathColor}"
+    d="
+    M 50, 50
+    m -45, 0
+    a 45,45 0 1,0 90,0
+    a 45,45 0 1,0 -90,0
+    "
+    ></path>
+    </g>
+    </svg>
+    <span id="base-timer-label" class="base-timer__label">${formatTime(
+      timeLeft
+      )}</span>
+    </div>
+    `;
+    startTimer();
+    // setTimeout(function() {
+    //   $('#find-doc').modal();
+    // }, 20000);
+  });
+//Doc waiting time
+// Credit: Mateusz Rybczonec
 
 
 

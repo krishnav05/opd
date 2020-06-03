@@ -79,13 +79,13 @@
 
   <div class="modal fade animate m-4" id="pickup-call" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content animate-bottom">
+    <div class="modal-content animate-bottom" style="width: 87%;">
       
       <div class="modal-body">
        <h1 class="text-center mb-3"> Tap to Answer </h1>
        <div class="m-auto text-center">
           <div class="sonar-wrapper">
-            <div class="sonar-emitter"><a href="#" class="fa fa-phone fa-2x"></a>
+            <div class="sonar-emitter" style="padding-top: 13px;display: inline-block;"><a href="#" class="fa fa-phone fa-2x"></a>
               <div class="sonar-wave"></div>
             </div>
           </div>

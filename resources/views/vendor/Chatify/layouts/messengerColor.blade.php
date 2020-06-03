@@ -12,7 +12,8 @@
 }
 
 .m-header svg{
-    color: {{ $messengerColor }};
+    /*color: {{ $messengerColor }};*/
+     color: #255985;
 }
 
 .m-list-active,
@@ -39,11 +40,13 @@
 }
 
 .mc-sender p{
-  background: {{ $messengerColor }};
+  /*background: {{ $messengerColor }};*/
+  background: #255985;
 }
 
 .messenger-sendCard button svg{
-    color: {{ $messengerColor }};
+    /*color: {{ $messengerColor }};*/
+    color: #255985;
 }
 
 .messenger-listView-tabs a,

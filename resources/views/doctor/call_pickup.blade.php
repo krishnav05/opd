@@ -46,7 +46,7 @@
        <h1 class="text-center mb-3"> Are you available to <br> take calls? </h1>
        <div class="m-auto text-center">
           <div class="button b2" id="button-10">
-                <input type="checkbox" class="checkbox">
+                <input id="check" type="checkbox" class="checkbox">
                 <div class="knobs">
                   <span>YES</span>
                 </div>
@@ -67,6 +67,9 @@
 
 <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
 <script>
+  $('#button-10').on('click',function(){
+    alert($('#check').is(":checked"));
+  });
 	var patientid;
     // Enable pusher logging - don't include this in production
     Pusher.logToConsole = true;
@@ -88,13 +91,17 @@
     var channel = pusher.subscribe('private-my-channel');
     channel.bind('notify-doctor', function(data) {
       // alert(JSON.stringify(data));
-      $('#pickup-call').modal({
+      if($('#check').is(":checked") == false)
+      {
+        $('#pickup-call').modal({
             backdrop: 'static',
             keyboard: false
         });
       $('#audio')[0].play();
       localStorage.setItem("id",data.id);
       window.patientid = data.id;
+      }
+      
     });
   </script>
   <script type="text/javascript">

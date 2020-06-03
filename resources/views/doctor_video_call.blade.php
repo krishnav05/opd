@@ -27,42 +27,48 @@ border:1px solid #FF9800;
           padding: 14px;
           text-align: center;
           }
-.ic-mute-call{
-        width: 45px;
-        height: 45px;
-        background: #ccc;
-        color: #999;
-        border-radius: 100%;
-        text-align: center;
-        padding: 12px;
-        margin: 0 10px;
-        display: inline-block;
-      }
+.ic-mute-call {
+              width: 65px;
+              height: 65px;
+              background: #ccc;
+              color: #999;
+              border-radius: 100%;
+              text-align: center;
+              padding: 12px;
+              margin: 0 10px;
+              display: inline-block;
+              font-size: 3em;
+          }
+           .ic-mute-call .fa {line-height: 65px;}
 .ic-mute-call.active{
             color: #333 !important;
           }
-.ic-end-call{
-        width: 45px;
-        height: 45px;
-        background: #D32F2F;
-        color: #fff;
-        border-radius: 100%;
-        text-align: center;
-        padding: 12px;
-        margin: 0 10px;
-        display: inline-block;
-      }
-.ic-off-video-call{
-        width: 45px;
-        height: 45px;
-        background: #ccc;
-        color: #999;
-        border-radius: 100%;
-        text-align: center;
-        padding: 12px;
-        margin: 0 10px;
-        display: inline-block;  
-      }
+.ic-end-call {
+              width: 65px;
+              height: 65px;
+              background: #D32F2F;
+              color: #fff;
+              border-radius: 100%;
+              text-align: center;
+              padding: 12px;
+              margin: 0 10px;
+              display: inline-block;
+              font-size: 3em;
+          }
+           .ic-end-call .fa {line-height: 65px;}
+.ic-off-video-call {
+                width: 65px;
+                height: 65px;
+                background: #ccc;
+                color: #999;
+                border-radius: 100%;
+                text-align: center;
+                padding: 12px;
+                margin: 0 10px;
+                display: inline-block;
+                font-size: 3em;
+            }
+            .ic-off-video-call .fa {line-height: 65px;}
 .ic-off-video-call.active{
             color: #333 !important;
           }

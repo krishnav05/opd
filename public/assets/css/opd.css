@@ -51,6 +51,15 @@ header a.logo span{
 					background: #255985;
 					color: #fff;
 				 }
+.credit-box.doc-profile{
+width: 40px !important;
+height: 40px !important;
+}
+.credit-box.doc-profile img{
+border-radius: 50%;
+width: 40px !important;
+height: 40px !important;
+}
 .form-control-lg{
 					border-radius: 10rem !important;
 					font-size: 16px;

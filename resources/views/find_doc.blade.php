@@ -13,6 +13,10 @@
   <div id="app" class="col">
     
   </div>
+  <div class="col otp-card">
+      <h1>Enter Your Phone Number</h1>
+      
+    </div>
   <input id="findnow" type="button" value="Consult Doctor Now" class="btn btn-primary form-control form-control-lg mt-3">
   <div id="divs" style="display: none;"><h1 class="text-center mb-4">hang on! <br> finding a doctor for you</h1 class="text-center"></div>
 
@@ -50,54 +54,7 @@
 var startTime = performance.now();
 
   var userid;
-  $('#findnow').on('click',function(){
-    $(this).hide();
-    $(this).next('div').show();
 
-    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-    $.ajax({
-                    /* the route pointing to the post function */
-                    url: "find-doc",
-                    type: 'POST',
-                    /* send the csrf-token and the input to the controller */
-                    data: {_token: CSRF_TOKEN},
-                    dataType: 'JSON',
-                    /* remind that 'data' is the response of the AjaxController */
-                    success: function (data) { 
-                       window.userid = data.id;
-                       // alert(window.userid);
-                    }
-                });
-
-    document.getElementById("app").innerHTML = `
-    <div class="base-timer">
-    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <g class="base-timer__circle">
-    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-    <path
-    id="base-timer-path-remaining"
-    stroke-dasharray="283"
-    class="base-timer__path-remaining ${remainingPathColor}"
-    d="
-    M 50, 50
-    m -45, 0
-    a 45,45 0 1,0 90,0
-    a 45,45 0 1,0 -90,0
-    "
-    ></path>
-    </g>
-    </svg>
-    <span id="base-timer-label" class="base-timer__label">${formatTime(
-      timeLeft
-      )}</span>
-    </div>
-    `;
-    const TIME_LIMIT = 20;
-    startTimer();
-    // setTimeout(function() {
-    //   $('#find-doc').modal();
-    // }, 20000);
-  });
 
     // Enable pusher logging - don't include this in production
     Pusher.logToConsole = true;
