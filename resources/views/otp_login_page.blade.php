@@ -16,7 +16,7 @@
       <form action="otp-send" method="POST">
       	@csrf
         <div class="form-group mt-4">
-          <input type="text" pattern="[0-9]*" name="phone" size="10" minlength="10" maxlength="10"  class="form-control form-control-lg">
+          <input type="text"  pattern="\d*" name="phone" size="10" minlength="10" maxlength="10"  class="form-control form-control-lg">
           <input type="submit" name="" value="generate otp" class="btn btn-primary form-control form-control-lg mt-3">
         </div>  
       </form>
