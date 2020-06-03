@@ -145,6 +145,9 @@ class DoctorController extends Controller
         $response = array(
                     'success' => 'success',
                 );
+        $alert = 'end';
+        $endid = Auth::user()->id;
+        event(new AlertCall($alert,$endid));
 
         return response()->json($response);           
     }
@@ -152,7 +155,8 @@ class DoctorController extends Controller
     public function videoCallAlert(Request $request)
     {   
         $alert = 'alert';
-        event(new AlertCall($alert));
+        $id = Auth::user()->id;
+        event(new AlertCall($alert,$id));
         $response = array(
                     'success' => 'success',
                 );

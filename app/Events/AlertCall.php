@@ -14,15 +14,17 @@ class AlertCall implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
     public $alert;
+    public $id;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($alert)
+    public function __construct($alert,$id)
     {
         //
         $this->alert = $alert;
+        $this->id = $id;
     }
 
     /**

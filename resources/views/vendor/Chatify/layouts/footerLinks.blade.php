@@ -47,13 +47,17 @@
     var channel = patientalert.subscribe('private-call-alert');
     channel.bind('call-alert', function(data) {
       // alert(JSON.stringify(data));   
-      if(data.alert == 'alert')
+      if(data.alert == 'alert' && data.id == window.id)
       {
         $('#pickup-call').modal({
             backdrop: 'static',
             keyboard: false
         });
-      }   
+      } 
+      if(data.alert == 'end' && data.id == window.id)
+      {
+        window.location = '/find-doc';
+      }  
     });
 @endif
 $('#end').on('click',function(){

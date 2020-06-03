@@ -136,7 +136,7 @@ function initializeSession() {
   });
 
   $('.ic-mute-call.active').on('click',function(){
-    $('.ic-mute-call.active').removeClass('active');
+    $('.ic-mute-call').removeClass('active');
     publisher.publishAudio(true);
   });
 
@@ -146,7 +146,7 @@ function initializeSession() {
   });
 
   $('.ic-off-video-call.active').on('click',function(){
-    $('.ic-off-video-call.active').removeClass('active');
+    $('.ic-off-video-call').removeClass('active');
     publisher.publishVideo(true);
   });
 
