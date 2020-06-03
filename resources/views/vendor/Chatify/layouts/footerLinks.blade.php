@@ -47,7 +47,7 @@
     var channel = patientalert.subscribe('private-call-alert');
     channel.bind('call-alert', function(data) {
       // alert(JSON.stringify(data));   
-      if(data.alert == 'alert' && data.id == window.id)
+      if(data.alert == 'alert' && data.id == localStorage.getItem('id'))
       {
         $('#pickup-call').modal({
             backdrop: 'static',
@@ -55,7 +55,7 @@
         });
         $('#audio')[0].play();
       } 
-      if(data.alert == 'end' && data.id == window.id)
+      if(data.alert == 'end' && data.id == localStorage.getItem('id'))
       {
         window.location = '/find-doc';
       }  
