@@ -19,7 +19,7 @@
     <div class="fluid-container">
       <div class="row m-0">
         
-        <div class="col text-left pl-0"> @if(Auth::check()) @if(Auth::user()->role_id == 2) @if(isset($check)) <a onclick="window.history.back();"> <i class="fa fa-arrow-left"></i></a>  @else   <a class="fa fa-history fa-2x text-center" href="/history"> <span class="d-block">History</span></a>@endif @endif @endif</div>
+        <div class="col text-left pl-0"> @if(Auth::check()) @if(Auth::user()->role_id == 2) @if(isset($check)) <a onclick="window.history.back();"> <i class="fa fa-arrow-left fa-2x"></i></a>  @else   <a class="fa fa-history fa-2x text-center" href="/history"> <span class="d-block">History</span></a>@endif @endif @endif</div>
         <div class="col text-center"> <a href="/" class="logo"> only<span>OPD</span> </a> </div>
         <div class="col text-right pr-0">@if(Auth::check()) <a class="credit text-center" href="" onclick="return false;"> @if(Auth::check() && Auth::user()->role_id == 3) <span class="
           credit-box doc-profile"><img src="/storage/users-avatar/{{Auth::user()->avatar}}" style="border-radius: 50%; height: 40px; width: 40px;" > @else <span class="
