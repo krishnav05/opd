@@ -15,7 +15,7 @@ class HistoryController extends Controller
 	{	
 		$messages = HistoryMessages::where('consultation_id',$request->id)->get();
 		$id = Auth::user()->id;
-		$check == 1;
+		$check = 1;
 		return view('history',['messages'=>$messages,'id'=>$id,'check'=>$check]);
 	}
 
@@ -26,7 +26,7 @@ class HistoryController extends Controller
 		$doctors = User::where('role_id',3)->get();
 
 		$consultations = Consultations::where('patientId',$id)->orderBy('created_at', 'desc')->get();
-		$check == 1;
+		$check = 1;
 		return view('consultations',['consultations'=>$consultations,'doctors'=>$doctors,'check'=>$check]);
 	}
 
