@@ -11,7 +11,7 @@
   </div>
   <div class="mt-4 mb-4 text-center"><h5>You are <strong id="text_avail" style="color: black;">Available</strong> to take calls.</h5></div>
  <input id="available" type="button" value="CHANGE STATUS" class="btn btn-primary form-control form-control-lg mt-3">
- <p></p>
+ <p id="inside"></p>
   
 </div>
 
@@ -76,9 +76,13 @@
     if($('#check').is(":checked") == true)
     {
       $('#text_avail').html('').html('Not Available').css("color","red");
+      $('#inside').html('You are not receiving any calls from patients').css("color","red");
     }
     else
+    {
+      $('#inside').html();
       $('#text_avail').html('').html('Available').css("color","black");
+    }
 
   });
 	var patientid;

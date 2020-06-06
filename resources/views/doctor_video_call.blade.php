@@ -132,23 +132,30 @@ function initializeSession() {
   var publisher = OT.initPublisher('publisher', publisherOptions, handleError);
 
   $('.ic-mute-call').on('click',function(){
-    $('.ic-mute-call').addClass('active');
-    publisher.publishAudio(false);
-  });
+    if($('.ic-mute-call').hasClass('active'))
+    {
+      $('.ic-mute-call').removeClass('active');
+      publisher.publishAudio(true);
+    }
+    else{
+      $('.ic-mute-call').addClass('active');
 
-  $('.ic-mute-call.active').on('click',function(){
-    $('.ic-mute-call').removeClass('active');
-    publisher.publishAudio(true);
+    publisher.publishAudio(false);
+    }
+    
   });
 
   $('.ic-off-video-call').on('click',function(){
-    $('.ic-off-video-call').addClass('active');
-    publisher.publishVideo(false);
-  });
+    if($('.ic-off-video-call').hasClass('active'))
+    {
+      $('.ic-off-video-call').removeClass('active');
+      publisher.publishVideo(true);
+    }
+    else{
+      $('.ic-off-video-call').addClass('active');
 
-  $('.ic-off-video-call.active').on('click',function(){
-    $('.ic-off-video-call').removeClass('active');
-    publisher.publishVideo(true);
+    publisher.publishVideo(false);
+    }
   });
 
   $('.ic-end-call').on('click',function(){
