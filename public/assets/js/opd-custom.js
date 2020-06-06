@@ -1,8 +1,9 @@
 
-
+var my;
   $('#findnow').on('click',function(){
     $(this).hide();
     $(this).next('div').show();
+    $(this).next('div').next('input').show();
 
 
 const FULL_DASH_ARRAY = 283;
@@ -141,7 +142,16 @@ function setCircleDasharray() {
     `;
     startTimer();
 
- setInterval(resend, 190000);
+  
+ window.my = setInterval(resend, 190000);
+ $('#endnow').on('click',function(){
+    $(this).hide();
+    $('#findnow').show();
+    $('#findnow').next('div').hide();
+    document.getElementById("app").innerHTML = ``;
+    clearInterval(timerInterval);
+    clearInterval(window.my);
+  });
   });
   function resend()
   {
@@ -277,4 +287,12 @@ function setCircleDasharray() {
     </div>
     `;
     startTimer();
+    $('#endnow').on('click',function(){
+    $(this).hide();
+    $('#findnow').show();
+    $('#findnow').next('div').hide();
+    document.getElementById("app").innerHTML = ``;
+    clearInterval(timerInterval);
+    clearInterval(window.my);
+  });
   }

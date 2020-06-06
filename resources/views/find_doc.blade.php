@@ -17,6 +17,7 @@
       <h6>You have <strong style="color: black;">{{$credit}} credit.</strong></h6>
       <input id="findnow" type="button" value="Consult Doctor Now" class="btn btn-primary form-control form-control-lg mt-3">
   <div id="divs" style="display: none;"><h1 class="text-center mb-4">hang on! <br> finding a doctor for you</h1 class="text-center"></div>
+    <input id="endnow" type="button" value="Stop Findind Doctor" class="btn btn-primary form-control form-control-lg mt-3" style="display: none;">
     </div>
   
 
