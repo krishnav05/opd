@@ -41,17 +41,5 @@
   
 </div>
 
-<button id="as" class="please"> asdasd</button>
-@endsection
-@section('footer')
-<script type="text/javascript">
-  $('.please').on('click',function(){
-    $('.please').addClass('active');
-    alert('added');
-  }); 
-  $('.please.active').on('click',function(){
-    $('.please.active').removeClass('active');
-    alert('removed');
-  });
-</script>
+
 @endsection
