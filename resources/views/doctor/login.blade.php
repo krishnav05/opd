@@ -41,3 +41,10 @@
 </div>
 
 @endsection
+
+@section('footer')
+
+<footer class="text-center p-2">
+      <div class="container"> <a href="" onclick="return false;"> Terms </a> | <a href="" onclick="return false;"> Privacy </a> | &nbsp; 2020 &copy; Copyrights onlyOPD </div>
+    </footer>
+@endsection

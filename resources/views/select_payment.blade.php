@@ -44,11 +44,11 @@
     </div>
   </div>
 
-  <div class="row">
+  <!-- <div class="row">
     <div class="col text-center">
       <p> Are you a doctor? <br> <a href="contact-us">Contact Us</a> </p>
     </div>
-  </div>
+  </div> -->
   
 </div>
 

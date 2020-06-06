@@ -9,8 +9,9 @@ class ContactUsController extends Controller
 {
     //
     public function index()
-    {
-    	return view('contact_us');
+    {   
+        $contact = 1;
+    	return view('contact_us',['contact'=>$contact]);
     }
 
     public function update(Request $request)
