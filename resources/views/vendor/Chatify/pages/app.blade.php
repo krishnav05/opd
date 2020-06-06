@@ -65,6 +65,7 @@
                 {{-- header back button, avatar and user name --}}
                 <div style="display: inline-flex;">
                     <!-- <a href="#" class="show-listView"><i class="fas fa-arrow-left"></i></a> -->
+                    <a href="#" id="end"><i class="far fa-times-circle"></i></a>
                     <div class="avatar av-s header-avatar" style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;">
                     </div>
                     <a href="#" class="user-name">{{ config('chatify.name') }}</a>
@@ -77,7 +78,7 @@
                     @if(auth()->user()->role_id == '3')
                     <!-- add call function here -->
                     <a href="#" id="video-call" ><i class="fas fa-video"></i></a>
-                    <a href="#" id="end"><i class="far fa-times-circle"></i></a>
+                    <!-- <a href="#" id="end"><i class="far fa-times-circle"></i></a> -->
                     @endif
                 </nav>
             </nav>
