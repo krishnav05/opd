@@ -93,6 +93,7 @@ border:1px solid #FF9800;
         src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
         crossorigin="anonymous"></script>
+        <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
     <script type="text/javascript">
 
     var token = '{{ $opentok_token }}';
@@ -171,6 +172,39 @@ function initializeSession() {
     }
   });
 }
+    </script>
+    <script type="text/javascript">
+      $id = '{{auth()->user()->id}}';
+
+      // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('5cee25784dec312477c7', {
+      authEndpoint: '/broadcasting/auth',
+      encrypted: true,
+      cluster: 'ap2',
+      auth: {
+ 
+        headers: {
+ 
+            'X-CSRF-Token': '{{ csrf_token() }}'
+ 
+        }
+ 
+    }
+    });
+
+    var channel = pusher.subscribe('private-end-video-call');
+    channel.bind('video-end', function(data) {
+      // alert(JSON.stringify(data));
+      
+      if(data.id == window.id)
+      {
+        window.location = '/chatify';
+      }
+      
+    });
+
     </script>
 </body>
 </html>

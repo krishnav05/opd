@@ -88,6 +88,7 @@ Route::post('video-call-alert','DoctorController@videoCallAlert')->middleware('a
 
 Route::post('end','DoctorController@end')->middleware('auth.custom','doctor');
 
+Route::post('endvideo','DoctorController@endvideo')->middleware('auth.custom','doctor');
 // history
 
 Route::get('history/{id}','HistoryController@getHistory')->middleware('auth.custom','patient');

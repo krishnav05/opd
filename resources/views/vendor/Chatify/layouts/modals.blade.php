@@ -100,3 +100,30 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade animate m-4" id="end-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content animate-bottom">
+      
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+       <h1 class="text-center mb-3"> Do you want to end <br> the conversation? </h1>
+       <div class="col-sm-12">
+          <div class="button b2 clx" id="button-10">
+                <input type="checkbox" id="check" class="checkbox">
+                <div class="knobs">
+                  <span >CLOSE <i class="fa fa-arrow-right"></i></span>
+                </div>
+                <div class="layer clx"></div>
+            </div>
+       </div>
+       <h5 class="text-center mt-3">Swipe to close the call. chat will be saved in your history.</h5>
+       
+      
+      </div>
+    
+    </div>
+  </div>
+</div>

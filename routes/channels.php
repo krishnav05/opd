@@ -28,3 +28,7 @@ Broadcast::channel('call-alert', function ($user) {
     return true;
 });
 
+Broadcast::channel('end-video-call', function ($user) {
+    return true;
+});
+

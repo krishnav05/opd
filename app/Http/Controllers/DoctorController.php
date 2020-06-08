@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use App\Events\NotifyPatient;
 use App\Events\AlertCall;
+use App\Events\EndVideo;
 use App\Consultations;
 use OpenTok\OpenTok;
 use OpenTok\MediaMode;
@@ -162,5 +163,16 @@ class DoctorController extends Controller
                 );
 
         return response()->json($response);  
+    }
+
+    public function endvideo(Request $request)
+    {
+        $id = Consultations::where('doctorId',Auth::user()->id)->where('completed',null)->value('patientId');
+        event(new EndVideo($id));
+        $response = array(
+                    'success' => 'success',
+                );
+
+        return response()->json($response);
     }
 }

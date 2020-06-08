@@ -62,7 +62,14 @@
     });
 @endif
 $('#end').on('click',function(){
-  var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+  $('#end-modal').modal();
+  
+});
+
+$('#button-10').on('click',function(){
+  if($('#check').is(":checked") == true)
+  {
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     $.ajax({
                     /* the route pointing to the post function */
                     url: "/end",
@@ -76,6 +83,7 @@ $('#end').on('click',function(){
                       window.location = '/call-pickup';
                     }
                 });
+  }
 });
 
 $('#video-call').on('click',function(){
