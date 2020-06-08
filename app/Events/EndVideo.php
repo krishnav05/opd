@@ -13,7 +13,7 @@ use Illuminate\Queue\SerializesModels;
 class EndVideo
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    $id;
+    public $id;
     /**
      * Create a new event instance.
      *
