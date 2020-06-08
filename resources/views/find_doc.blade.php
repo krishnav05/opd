@@ -12,7 +12,7 @@
 
   <div id="app" class="col">
     
-  </div><p><a id="endnow" style="display: none;text-align: center" class="mt-2 mb-2">Stop Finding Doctor</a></p>
+  </div><p style="text-align: center;" class="mt-2"><a id="endnow" style="display: none;text-align: center" class="mt-2 mb-2">Stop Finding Doctor</a></p>
   
   <div id="card" class="col otp-card" style="text-align: center;margin-left: 0;margin-right: 0;">
       <h6>You have <strong style="color: black;">{{$credit}} credit.</strong></h6>
