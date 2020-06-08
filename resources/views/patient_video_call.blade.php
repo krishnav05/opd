@@ -198,7 +198,7 @@ function initializeSession() {
     channel.bind('video-end', function(data) {
       // alert(JSON.stringify(data));
       
-      if(data.id == window.id)
+      if(data.id == '{{auth()->user()->id}}')
       {
         window.location = '/chatify';
       }
