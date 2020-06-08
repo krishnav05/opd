@@ -1,6 +1,7 @@
 <html>
 <head>
     <title> OnlyOPD Video Call </title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
 .his-video{
 position: absolute;
