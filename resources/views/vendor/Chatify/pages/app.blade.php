@@ -66,8 +66,8 @@
                 <div style="display: inline-flex;">
                     <!-- <a href="#" class="show-listView"><i class="fas fa-arrow-left"></i></a> -->
                     @if(auth()->user()->role_id == '3')
-                    <a href="#" id="end"><i class="far fa-times-circle" style="color: red;"></i></a>
-                    End Call
+                    <a href="#" id="end" style="color: red;"><i class="far fa-times-circle" style="color: red;"></i>End Call</a>
+                    
                     @endif
                     <div class="avatar av-s header-avatar" style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;">
                     </div>
