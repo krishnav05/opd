@@ -71,15 +71,25 @@
 
 <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
 <script>
+  if (localStorage.getItem("status") === 'yes') {
+  //...
+  $('#check').prop('checked',false);
+}
+else if(localStorage.getItem("status") === 'no')
+{
+  $('#check').prop('checked',true);
+  $('#text_avail').html('').html('Not Available').css("color","red");
+      $('#inside').html('You are not receiving any calls from patients').css("color","red");
+}
   $('#button-10').on('click',function(){
     // alert($('#check').is(":checked"));
     if($('#check').is(":checked") == true)
-    {
+    { localStorage.setItem('status','no');
       $('#text_avail').html('').html('Not Available').css("color","red");
       $('#inside').html('You are not receiving any calls from patients').css("color","red");
     }
     else
-    {
+    { localStorage.setItem('status','yes');
       $('#inside').html('');
       $('#text_avail').html('').html('Available').css("color","black");
     }
@@ -121,7 +131,10 @@
   </script>
   <script type="text/javascript">
   	$('#available').on('click',function(){
-  		$('#find-doc').modal();
+  		$('#find-doc').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
   	});
   	$('#pick').on('click',function(){
   		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');

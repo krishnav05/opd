@@ -142,7 +142,8 @@ class OtpController extends Controller
 
     public function verifyOtp(Request $request)
     {
-    	$pin = $request->pin1.$request->pin2.$request->pin3.$request->pin4;
+    	// $pin = $request->pin1.$request->pin2.$request->pin3.$request->pin4;
+      $pin = $request->pin;
         $user = User::where('phone',$request->number)->where('otp',$pin)->first();
 
         if($user)

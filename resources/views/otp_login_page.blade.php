@@ -83,7 +83,7 @@
     </footer>
     <script type="text/javascript">
     	$('#generate-otp-button').on('click',function(){
-    		$('#generate-otp-button').hide();
+    		$('#generate-otp-button').prop('disabled', true);
     	});
     </script>
 @endsection

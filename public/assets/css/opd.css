@@ -579,3 +579,7 @@ footer a{
     z-index: 1;
 }
 /* Swipe to close End*/
+
+.otp-wide{
+  width: auto;display: inline;margin: 0.25rem;text-align: center;
+}
