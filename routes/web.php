@@ -99,3 +99,10 @@ Route::post('endvideo','DoctorController@endvideo')->middleware('auth.custom','d
 Route::get('history/{id}','HistoryController@getHistory')->middleware('auth.custom','patient');
 
 Route::get('history','HistoryController@getConsultations')->middleware('auth.custom','patient');
+
+
+//error routes
+
+Route::get('404',['as'=>'404','uses'=>'ErrorHandlerController@errorCode404']);
+
+Route::get('405',['as'=>'405','uses'=>'ErrorHandlerController@errorCode405']);
