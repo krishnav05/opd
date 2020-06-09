@@ -15,6 +15,8 @@ use OpenTok\OpenTok;
 use OpenTok\MediaMode;
 use OpenTok\ArchiveMode;
 use DB;
+use Session;
+use App\DoctorDetails;
 
 
 class DoctorController extends Controller
@@ -174,5 +176,30 @@ class DoctorController extends Controller
                 );
 
         return response()->json($response);
+    }
+
+    public function profile()
+    {   $id = Auth::user()->id;
+        $name = Auth::user()->name;
+        $work = DoctorDetails::where('doctor_id',$id)->value('current_hospital');
+        $speciality = DoctorDetails::where('doctor_id',$id)->value('speciality');
+        $years = DoctorDetails::where('doctor_id',$id)->value('years');
+        $doctorprofile = 1;
+        return view('doctor.profile',['name'=>$name,'years'=>$years,'work'=>$work,'speciality'=>$speciality,'doctorprofile'=>$doctorprofile]);
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $id = Auth::user()->id;
+        User::where('id',$id)->update(['name'=>$request->fullname]);
+        DoctorDetails::where('doctor_id',$id)->update(['current_hospital'=>$request->work,'years'=>$request->years,'speciality'=>$request->speciality]);
+        return redirect()->back()->with('success', 'Thank You For Contacting Us. We will contact you soon.');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        Session::flush();
+        return redirect()->route('doctorlogin');
     }
 }

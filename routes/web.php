@@ -68,7 +68,7 @@ Route::get('credits','FindController@addCredits')->middleware('auth.custom','pat
 
 //doctor login
 
-Route::get('doctorlogin','DoctorController@loginPage');
+Route::get('doctorlogin','DoctorController@loginPage')->name('doctorlogin');
 
 Route::post('doc-login','DoctorController@login');
 
@@ -78,6 +78,11 @@ Route::post('call-pickup','DoctorController@alertPatient')->middleware('auth.cus
 
 Route::post('doc-details','DoctorController@getDetails')->middleware('auth.custom');
 
+Route::get('profile','DoctorController@profile')->middleware('auth.custom','doctor');
+
+Route::post('profile','DoctorController@updateProfile')->middleware('auth.custom','doctor');
+
+Route::get('doctor-logout','DoctorController@logout');
 
 //video test routes
 Route::get('patient-video-call','PatientController@connectVideo')->middleware('auth.custom','patient');
