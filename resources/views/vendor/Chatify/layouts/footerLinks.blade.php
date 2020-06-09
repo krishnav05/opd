@@ -109,3 +109,11 @@ $('#pick').on('click',function(){
   window.location = '/patient-video-call';
 });
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167493010-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167493010-1');
+</script>

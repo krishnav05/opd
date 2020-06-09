@@ -21,9 +21,9 @@
         
         <div class="col text-left pl-0"> @if(Auth::check()) @if(Auth::user()->role_id == 2) @if(isset($check)) <a onclick="window.history.back();"> <i class="fa fa-arrow-left fa-2x"></i></a>  @else   <a class="fa fa-history fa-2x text-center" href="/history"> <span class="d-block">History</span></a>@endif @endif @endif @if(isset($contact)) <a onclick="window.history.back();"> <i class="fa fa-arrow-left fa-2x"></i></a>  @endif</div>
         <div class="col text-center"> <a href="/" class="logo"> only<span>OPD</span> </a> </div>
-        <div class="col text-right pr-0">@if(Auth::check()) <a class="credit text-center" href="" onclick="return false;"> @if(Auth::check() && Auth::user()->role_id == 3) <span class="
+        <div class="col text-right pr-0">@if(Auth::check()) @if(isset($check)) @else<a class="credit text-center" href="" onclick="return false;"> @if(Auth::check() && Auth::user()->role_id == 3) <span class="
           credit-box doc-profile"><img src="/storage/users-avatar/{{Auth::user()->avatar}}" style="border-radius: 50%; height: 40px; width: 40px;" > @else <span class="
-          credit-box"> @if(isset($credit)) {{$credit}} @else 0 @endif @endif</span>@if(Auth::check() && Auth::user()->role_id == 3) @else <span class="d-block"> Credits</span> @endif </a> @endif</div>
+          credit-box"> @if(isset($credit)) {{$credit}} @else 0 @endif @endif</span>@if(Auth::check() && Auth::user()->role_id == 3) @else <span class="d-block"> Credits</span> @endif </a> @endif @endif</div>
         </div>
       </div>
     </header>
@@ -48,5 +48,13 @@
     <script type="text/javascript" src="{{asset('assets/js/opd-custom.js')}}"></script>
 
     @yield('footer')
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167493010-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-167493010-1');
+</script>
   </body>
   </html>

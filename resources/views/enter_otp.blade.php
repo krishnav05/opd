@@ -24,7 +24,7 @@
           <input type="submit" value="get inside" class="btn btn-primary form-control form-control-lg mt-3">
         </div> 
         <div id="opt-timer" class="col-sm-12 text-center mt-3 js-timeout">2:00</div>
-            <a id="resend" class="col-sm-12 small mt-3  text-center">Resend OTP</a>
+            <a id="resend" class="col-sm-12 small mt-3  text-center" style="font-size: 32px;">Resend OTP</a>
         </div> 
       </form>
     </div>

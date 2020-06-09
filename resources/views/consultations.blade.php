@@ -2,15 +2,15 @@
 
 @section('content')
 
-<h5 style="text-align: center;">Consultations</h5>
+<h5 style="text-align: center;">Consultation History</h5>
 <center>
 <ul class="patient-history">
   @foreach($consultations as $consult)
   @foreach($doctors as $doctor)
   @if($consult['doctorId'] == $doctor['id']) 
   <li>
-    <a href="/history/{{$consult['id']}}">Checkup with {{$doctor['name']}}, {{$consult['created_at']->diffForHumans()}}</a>
-    <i class="fa fa-arrow-right"></i>
+    <a href="/history/{{$consult['id']}}">Checkup with {{$doctor['name']}}, {{$consult['created_at']->diffForHumans()}} ></a>
+    <!-- <i class="fa fa-arrow-right"></i> -->
   </li>
   @endif
   @endforeach
