@@ -23,7 +23,12 @@ class DoctorController extends Controller
 {
     //
     public function loginPage()
-    {
+    {   
+        if(Auth::check())
+        {
+            return redirect()->route('pickup');
+        }
+
     	return view('doctor.login');
     }
 
