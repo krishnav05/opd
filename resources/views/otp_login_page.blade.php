@@ -17,7 +17,7 @@
       	@csrf
         <div class="form-group mt-4">
           <input type="text" pattern="[0-9]*" inputmode="numeric" name="phone" size="10" minlength="10" maxlength="10"  class="form-control form-control-lg">
-          <input id="generate-otp-button" type="submit" name="" value="generate otp" class="btn btn-primary form-control form-control-lg mt-3">
+          <input id="generate-otp-button" type="submit" name="" value="generate otp" class="btn btn-primary form-control form-control-lg mt-3" onclick="this.prop('disabled',true);">
         </div>  
       </form>
     </div>
@@ -81,9 +81,4 @@
             keyboard: false
         });"> Privacy </a> | &nbsp; 2020 &copy; Copyrights onlyOPD </div>
     </footer>
-    <script type="text/javascript">
-    	$('#generate-otp-button').on('click',function(){
-    		$('#generate-otp-button').prop('disabled', true);
-    	});
-    </script>
 @endsection
