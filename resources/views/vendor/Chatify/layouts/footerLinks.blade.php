@@ -62,7 +62,10 @@
     });
 @endif
 $('#end').on('click',function(){
-  $('#end-modal').modal();
+  $('#end-modal').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
   
 });
 

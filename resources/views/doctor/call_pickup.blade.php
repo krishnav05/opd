@@ -11,7 +11,7 @@
   </div>
   <div class="mt-4 mb-4 text-center"><h5>You are <strong id="text_avail" style="color: black;">Available</strong> to take calls.</h5></div>
  <input id="available" type="button" value="CHANGE STATUS" class="btn btn-primary form-control form-control-lg mt-3">
- <p id="inside"></p>
+ <p id="inside" style="text-align: center;" class="mt-2"></p>
   
 </div>
 
@@ -80,7 +80,7 @@
     }
     else
     {
-      $('#inside').html();
+      $('#inside').html('');
       $('#text_avail').html('').html('Available').css("color","black");
     }
 
