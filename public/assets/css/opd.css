@@ -530,7 +530,7 @@ footer a{
 
 #button-10.clx .knobs:after
 {
-    content: 'Swipe to close';
+    content: 'Tap to close';
     right: 4px;
     color: #4e4e4e;
     width: 48%;
