@@ -32,8 +32,8 @@
           </div>
        </div>
        <input id="pick" type="button" formaction="" name="" value="Pickup" class="btn btn-primary form-control form-control-lg mt-3">
-        <br>
-        <input id="endcall" type="button" formaction="" name="" value="Cancel" class="btn btn-primary form-control form-control-lg mt-3" style="background-color: red">
+        <br><br>
+        <p style="text-align: center;"><a id="endcall">Cancel</a></p>
 
       </div>
     

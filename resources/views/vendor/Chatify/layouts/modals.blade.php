@@ -101,7 +101,7 @@
   </div>
 </div>
 
-<div class="modal fade animate m-4" id="end-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade animate ml-0" id="end-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content animate-bottom">
       
