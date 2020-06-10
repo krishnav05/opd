@@ -3,15 +3,15 @@
     <title> OnlyOPD Video Call </title>
     <style>
     .his-video{
-position: absolute;
-width: 35vw;
-height: 12vh;
-overflow: hidden;
-background: #333;
-display: block;
-top: 20px;
-right: 20px;
-border:1px solid #FF9800;
+ position: absolute;
+    width: 28vw;
+    height: 20vh;
+    overflow: hidden;
+    background: #333;
+    display: block;
+    top: 20px;
+    right: 20px;
+    border: 1px solid #FF9800;
 }.my-video{
       position: relative;
       width: 100vw;
