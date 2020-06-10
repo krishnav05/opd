@@ -9,7 +9,7 @@
   @foreach($doctors as $doctor)
   @if($consult['doctorId'] == $doctor['id']) 
   <li>
-    <a href="/history/{{$consult['id']}}">Checkup with {{$doctor['name']}}, {{$consult['created_at']->diffForHumans()}} ></a>
+    <a href="/history/{{$consult['id']}}">Checkup with {{$doctor['name']}}, {{$consult['created_at']->diffForHumans()}}  <i class="fa fa-chevron-right"></i></a>
     <!-- <i class="fa fa-arrow-right"></i> -->
   </li>
   @endif
@@ -25,6 +25,7 @@
 	                 margin: 20px;
 	                 padding: 0px;
 	                 list-style:none;
+                   text-align: left;
                 }
 .patient-history li{
 	                   margin-bottom: 10px;

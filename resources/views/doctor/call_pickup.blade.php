@@ -155,15 +155,15 @@ else if(localStorage.getItem("status") === 'no')
                     }
                 });
   	});
-  	$(function(){
-    $('#pickup-call').on('show.bs.modal', function(){
-        var myModal = $(this);
-        clearTimeout(myModal.data('hideInterval'));
-        myModal.data('hideInterval', setTimeout(function(){
-            myModal.modal('hide');
-        }, 60000));
-    });
-});
+//   	$(function(){
+//     $('#pickup-call').on('show.bs.modal', function(){
+//         var myModal = $(this);
+//         clearTimeout(myModal.data('hideInterval'));
+//         myModal.data('hideInterval', setTimeout(function(){
+//             myModal.modal('hide');
+//         }, 60000));
+//     });
+// });
   </script>
 
 @endsection

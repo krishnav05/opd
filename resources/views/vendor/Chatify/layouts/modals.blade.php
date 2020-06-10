@@ -119,7 +119,7 @@
                 <div class="layer clx"></div>
             </div>
        </div>
-       <h5 class="text-center mt-3">Swipe to close the call. chat will be saved in your history.</h5>
+       <h5 class="text-center mt-3">Tap to close the call. chat will be saved in your history.</h5>
        
       
       </div>

@@ -583,3 +583,12 @@ footer a{
 .otp-wide{
   width: auto;display: inline;margin: 0.25rem;text-align: center;
 }
+
+.otp-card input[type="text"]{
+                font-size: 24px;
+                letter-spacing: 2px;
+              }
+.btn-primary:focus{
+          background-color: #255985;
+          color: #fff;
+          }

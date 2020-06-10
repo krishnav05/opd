@@ -69,7 +69,7 @@
                     <a href="#" id="end" style="color: red;"><i class="far fa-times-circle" style="color: red;"></i>End Call</a>
                     
                     @endif
-                    <div class="avatar av-s header-avatar" style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;">
+                    <div class="avatar av-s header-avatar" style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;background: #fff;">
                     </div>
                     <a href="#" class="user-name">{{ config('chatify.name') }}</a>
                 </div>
@@ -77,7 +77,7 @@
                 <nav class="m-header-right">
                     <!-- <a href="#" class="add-to-favorite"><i class="fas fa-star"></i></a> -->
                     <!-- <a href="{{ route('home') }}"><i class="fas fa-home"></i></a> -->
-                    <a href="#" class="show-infoSide"><i class="fas fa-info-circle"></i></a>
+                    <!-- <a href="#" class="show-infoSide"><i class="fas fa-info-circle"></i></a> -->
                     @if(auth()->user()->role_id == '3')
                     <!-- add call function here -->
                     <a href="#" id="video-call" ><i class="fas fa-video"></i></a>
