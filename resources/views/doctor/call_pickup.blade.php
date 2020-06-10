@@ -33,7 +33,7 @@
        </div>
        <input id="pick" type="button" formaction="" name="" value="Pickup" class="btn btn-primary form-control form-control-lg mt-3">
         <br>
-        <input id="endcall" type="button" formaction="" name="" value="End Call" class="btn btn-primary form-control form-control-lg mt-3" style="background-color: red">
+        <input id="endcall" type="button" formaction="" name="" value="Cancel" class="btn btn-primary form-control form-control-lg mt-3" style="background-color: red">
 
       </div>
     
