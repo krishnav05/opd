@@ -32,7 +32,9 @@
           </div>
        </div>
        <input id="pick" type="button" formaction="" name="" value="Pickup" class="btn btn-primary form-control form-control-lg mt-3">
-      
+        <br>
+        <input id="endcall" type="button" formaction="" name="" value="End Call" class="btn btn-primary form-control form-control-lg mt-3" style="background-color: red">
+
       </div>
     
     </div>
@@ -176,6 +178,10 @@ else if(localStorage.getItem("status") === 'no')
 //         }, 60000));
 //     });
 // });
+$('#endcall').on('click',function(){
+  $('#pickup-call').modal('hide');
+      $('#audio')[0].pause();
+});
   </script>
 
 @endsection

@@ -141,22 +141,22 @@ $('#js-resetTimer').click(function () {
   //     }
   
   
-        $('input').keyup(function(event){
-          if($(this).val().length==$(this).attr("maxlength") && event.keyCode !== 8){
-            $(this).next().focus();
-          }
-        });
-      $('input').keydown(function(event){
-        if(event.keyCode == 8){
-          event.preventDefault();
-          if($(this).val().length==1){
-            $(this).val('');
-          }
-          else{
-            $(this).prev().focus().val('');
-          }
-        }
-      });
+      //   $('input').keyup(function(event){
+      //     if($(this).val().length==$(this).attr("maxlength") && event.keyCode !== 8){
+      //       $(this).next().focus();
+      //     }
+      //   });
+      // $('input').keydown(function(event){
+      //   if(event.keyCode == 8){
+      //     event.preventDefault();
+      //     if($(this).val().length==1){
+      //       $(this).val('');
+      //     }
+      //     else{
+      //       $(this).prev().focus().val('');
+      //     }
+      //   }
+      // });
      $('#resend').on('click',function(){
   var phone = $('#phone').val();
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
