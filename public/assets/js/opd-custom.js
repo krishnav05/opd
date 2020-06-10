@@ -4,7 +4,7 @@ var my;
     $(this).hide();
     $(this).next('div').show();
 
-  $('#endnow').hide();
+  // $('#endnow').hide();
 
 
 const FULL_DASH_ARRAY = 283;
@@ -157,7 +157,7 @@ function setCircleDasharray() {
   });
   function resend()
   {
-  $('#endnow').hide();
+  // $('#endnow').hide();
     const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
@@ -184,7 +184,7 @@ let remainingPathColor = COLOR_CODES.info.color;
 
 function onTimesUp() {
   clearInterval(timerInterval);
-  $('#endnow').show();
+  // $('#endnow').show();
   document.getElementById("app").innerHTML = `<div style="text-align: center;">It's taking more time than usual,<br>
   <strong>Doctors</strong> are busy with <strong>other patients.</strong><br>Please give us few more minutes.</div>`;
 }
