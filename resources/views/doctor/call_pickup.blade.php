@@ -116,7 +116,9 @@ else if(localStorage.getItem("status") === 'no')
     var channel = pusher.subscribe('private-my-channel');
     channel.bind('notify-doctor', function(data) {
       // alert(JSON.stringify(data));
-      if($('#check').is(":checked") == false)
+      if(data.status == 'alert')
+      {
+        if($('#check').is(":checked") == false)
       {
         $('#pickup-call').modal({
             backdrop: 'static',
@@ -125,7 +127,17 @@ else if(localStorage.getItem("status") === 'no')
       $('#audio')[0].play();
       localStorage.setItem("id",data.id);
       window.patientid = data.id;
+      } 
       }
+      if(data.status == 'end')
+      {
+        if(localStorage.getItem("id") == data.id )
+        {
+          $('#pickup-call').modal('hide');
+          $('#audio')[0].pause();
+        }
+      }
+      
       
     });
   </script>

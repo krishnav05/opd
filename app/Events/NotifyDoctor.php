@@ -16,15 +16,17 @@ class NotifyDoctor implements ShouldBroadcast
 
 
     public $id;
+    public $status;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($id)
+    public function __construct($id,$status)
     {
         //
         $this->id = $id;
+        $this->status = $status;
     }
 
     /**

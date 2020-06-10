@@ -6,15 +6,15 @@
   
   <div class="row">
     <div class="col text-center">
-      <img src="{{asset('assets/img/hero-select-payment.svg')}}" class="img-fluid mt-3 ">
+      <img src="{{asset('assets/img/hero-select-payment.svg')}}" class="img-fluid">
     </div>
   </div>
 
   <div class="row">
-    <div class="col otp-card">
+    <div class="col otp-card" style="margin-top: 0;">
       <h1>Pay & start chatting now </h1>
       <form action="" method="get" id="">
-        <div class="form-check mt-4 pl-0">
+        <div class="form-check mt-2 pl-0">
           <ul class="pay-option">
             <li> 
               <input class="form-check-input" type="radio" name="amount" id="exampleRadios1" value="99" checked>

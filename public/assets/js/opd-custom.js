@@ -147,6 +147,20 @@ function setCircleDasharray() {
   
  window.my = setInterval(resend, 190000);
  $('#endnow').on('click',function(){
+  var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+                    /* the route pointing to the post function */
+                    url: "alert-end",
+                    type: 'POST',
+                    /* send the csrf-token and the input to the controller */
+                    data: {_token: CSRF_TOKEN},
+                    dataType: 'JSON',
+                    /* remind that 'data' is the response of the AjaxController */
+                    success: function (data) { 
+                       // window.userid = data.id;
+                       // alert(window.userid);
+                    }
+                });
     $(this).hide();
     $('#findnow').show();
     $('#findnow').next('div').hide();
@@ -292,6 +306,20 @@ function setCircleDasharray() {
     `;
     startTimer();
     $('#endnow').on('click',function(){
+      var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+                    /* the route pointing to the post function */
+                    url: "alert-end",
+                    type: 'POST',
+                    /* send the csrf-token and the input to the controller */
+                    data: {_token: CSRF_TOKEN},
+                    dataType: 'JSON',
+                    /* remind that 'data' is the response of the AjaxController */
+                    success: function (data) { 
+                       // window.userid = data.id;
+                       // alert(window.userid);
+                    }
+                });
     $(this).hide();
     $('#findnow').show();
     $('#findnow').next('div').hide();

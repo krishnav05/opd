@@ -58,6 +58,8 @@ Route::post('addcredits','OtpController@add')->middleware('auth.custom','patient
 
 Route::post('find-doc','FindController@alertDoctor')->middleware('auth.custom','patient');
 
+Route::post('alert-end','FindController@endAlert')->middleware('auth.custom','patient');
+
 Route::get('find-doc','FindController@index')->middleware('auth.custom','patient')->name('find.doctor');
 
 Route::get('contact-us','ContactUsController@index');
@@ -96,9 +98,9 @@ Route::post('end','DoctorController@end')->middleware('auth.custom','doctor');
 Route::post('endvideo','DoctorController@endvideo')->middleware('auth.custom','doctor');
 // history
 
-Route::get('history/{id}','HistoryController@getHistory')->middleware('auth.custom','patient');
+Route::get('history/{id}','HistoryController@getHistory')->middleware('auth.custom');
 
-Route::get('history','HistoryController@getConsultations')->middleware('auth.custom','patient');
+Route::get('history','HistoryController@getConsultations')->middleware('auth.custom');
 
 
 //error routes

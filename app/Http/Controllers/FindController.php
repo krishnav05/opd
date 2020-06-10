@@ -46,7 +46,7 @@ class FindController extends Controller
         }
         
 
-		event(new NotifyDoctor($id));
+		event(new NotifyDoctor($id,'alert'));
 
                 $response = array(
                     'id' => $id,
@@ -54,6 +54,21 @@ class FindController extends Controller
 
                 return response()->json($response);        
 
+    }
+
+    public function endAlert(Request $request)
+    {
+        $id = Auth::user()->id;
+
+        Consultations::where('patientId',$id)->where('completed',null)->delete();
+
+        event(new NotifyDoctor($id,'end'));
+
+        $response = array(
+                    'success' => 'success',
+                );
+
+                return response()->json($response);
     }
 
 }

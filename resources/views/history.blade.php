@@ -4,19 +4,25 @@
 
 @foreach($messages as $msg)
 @if($id !== $msg['from_id'])
- <div class="container">
-    @if($msg['attachment'] !== null)
-  <img src="{{asset('storage/attachments/'.$msg['attachment'].'')}}" alt="Doctor">
-  @endif
-  <p >{{$msg['body']}}</p>
+ <div class="container" style="width: 90%;margin: 20px;">   
+  <span style="float: right;">@if(auth()->user()->role_id == 3) Patient @else Doctor @endif</span><br>
+  <!-- <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" width="0" height="0" @if(auth()->user()->role_id == 3) alt="Patient" @else alt="Doctor" @endif> -->
+  <p style="float: left;">{{$msg['body']}}
+    @if($msg['attachment'] != null)
+    <img src="{{asset('storage/attachments/'.$msg['attachment'].'.jpeg')}}" style="border-radius: 0%;">
+    @endif
+  </p>
   <span class="time-right">{{$msg['created_at']->diffForHumans()}}</span>
 </div>
 @else
-<div class="container darker">
-    @if($msg['attachment'] !== null)
-  <img src="{{asset('storage/attachments/'.$msg['attachment'].'')}}" alt="Patient" class="right">
-  @endif
-  <p>{{$msg['body']}}</p>
+<div class="container darker" style="width: 90%;margin: 20px;">
+  <span style="float: left;">@if(auth()->user()->role_id == 3) Doctor @else Patient @endif</span><br>
+  <!-- <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" width="0" height="0" @if(auth()->user()->role_id == 3) alt="Doctor" @else alt="Patient" @endif class="right"> -->
+  <p style="float: right;">{{$msg['body']}}
+    @if($msg['attachment'] != null)
+    <img src="{{asset('storage/attachments/'.$msg['attachment'].'.jpeg')}}" style="border-radius: 0%;">
+    @endif
+  </p>
   <span class="time-left">{{$msg['created_at']->diffForHumans()}}</span>
 </div>
 @endif
@@ -37,8 +43,6 @@
   border-radius: 5px;
   padding: 10px;
   margin: 20px;
-  border: 2px solid #dedede;
-  bac
 }
 
 /* Darker chat container */

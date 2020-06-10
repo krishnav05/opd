@@ -5,6 +5,7 @@
 <h5 style="text-align: center;">Consultation History</h5>
 <center>
 <ul class="patient-history">
+  @if(Auth::user()->role_id == 2)
   @foreach($consultations as $consult)
   @foreach($doctors as $doctor)
   @if($consult['doctorId'] == $doctor['id']) 
@@ -15,6 +16,18 @@
   @endif
   @endforeach
   @endforeach
+  @else
+  @foreach($consults as $consult)
+  @foreach($patients as $patient)
+  @if($consult['patientId'] == $patient['id']) 
+  <li>
+    <a href="/history/{{$consult['id']}}">Checkup with {{$patient['phone']}}, {{$consult['created_at']->diffForHumans()}}  <i class="fa fa-chevron-right"></i></a>
+    <!-- <i class="fa fa-arrow-right"></i> -->
+  </li>
+  @endif
+  @endforeach
+  @endforeach
+  @endif
 </ul>
 </center>
 @endsection
