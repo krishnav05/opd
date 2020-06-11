@@ -198,7 +198,7 @@ let remainingPathColor = COLOR_CODES.info.color;
 
 function onTimesUp() {
   clearInterval(timerInterval);
-  // $('#endnow').show();
+  $('#endnow').show();
   document.getElementById("app").innerHTML = `<div style="text-align: center;">It's taking more time than usual,<br>
   <strong>Doctors</strong> are busy with <strong>other patients.</strong><br>Please give us few more minutes.</div>`;
 }

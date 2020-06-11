@@ -14,11 +14,18 @@ class FindController extends Controller
 {
     public function index(Request $request)
     {   $credit = Auth::user()->credits;
+        $timer = 0;
+        $check = Consultations::where('patientId',Auth::user()->id)->where('completed',null)->first();
+
+        if($check)
+        {
+            $timer = 1;
+        }
         if($credit == 0)
         {
             return redirect()->route('credits');
         }
-    	return view('find_doc',['credit' => $credit]);
+    	return view('find_doc',['credit' => $credit,'timer'=>$timer]);
     }
 
     public function addCredits()

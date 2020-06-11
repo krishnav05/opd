@@ -119,5 +119,13 @@ var startTime = performance.now();
     $('#start-chat').on('click',function(){
       window.location = '/chatify';
     });
+
+    if({{$timer}})
+    {	$('#findnow').hide();	
+		$('#findnow').next('div').show();
+    	resend();
+    	 window.my = setInterval(resend, 190000);
+
+    }
   </script>
 @endsection
