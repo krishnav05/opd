@@ -69,7 +69,7 @@
                     <a href="#" id="end" style="color: red;"><i class="far fa-times-circle" style="color: red;"></i>End Call</a>
                     
                     @endif
-                    <div class="avatar av-s header-avatar" @if(auth()->user()->role_id == '3') style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;" @else style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;background: #fff;" @endif>
+                    <div class="avatar av-s header-avatar" @if(auth()->user()->role_id == '3') style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;background: #fff;" @else style="margin: 0px 10px; margin-top: -5px; margin-bottom: -5px;" @endif>
                     </div>
                     <a href="#" class="user-name">{{ config('chatify.name') }}</a>
                 </div>
