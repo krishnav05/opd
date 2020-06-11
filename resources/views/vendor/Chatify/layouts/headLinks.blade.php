@@ -1,5 +1,11 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
 {{-- Meta tags --}}
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<meta name="viewport" content= "width=device-width, user-scalable=no">
 <meta name="route" content="{{ $route }}">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <meta name="url" content="{{ url('').'/'.config('chatify.path') }}" data-user="{{ Auth::user()->id }}">
