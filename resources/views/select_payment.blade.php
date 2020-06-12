@@ -4,11 +4,11 @@
 
 <div class="container">
   
-  <div class="row">
+  <!-- <div class="row">
     <div class="col text-center">
       <img src="{{asset('assets/img/hero-select-payment.svg')}}" class="img-fluid">
     </div>
-  </div>
+  </div> -->
 
   <div class="row">
     <div class="col otp-card" style="margin-top: 0;">
