@@ -34,7 +34,7 @@
 
   <div class="row">
     <div class="col text-center">
-      <p>  <a href="" onclick="return false;">Register or Need Help?</a> </p>
+      <p>  <a href="contact-us">Register or Need Help?</a> </p>
     </div>
   </div>
   
