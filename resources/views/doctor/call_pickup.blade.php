@@ -120,7 +120,6 @@ else if(localStorage.getItem("status") === 'no')
       // alert(JSON.stringify(data));
       if(data.status == 'alert')
       {
-        clearTimeout(window.temp);
         if($('#check').is(":checked") == false)
       {
         $('#pickup-call').modal({
