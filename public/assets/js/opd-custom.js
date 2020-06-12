@@ -339,6 +339,15 @@ localStorage.setItem('a',document.getElementById("base-timer-label").innerText);
         seconds = +parts[1];
     return (minutes * 60 + seconds);
 }
+var temptime;
+if(localStorage.getItem('a') == null)
+{
+  temptime = 180;
+}
+else
+{
+  temptime = convert(localStorage.getItem('a'));
+}
     function previousresend()
   {
   // $('#endnow').hide();
@@ -360,7 +369,7 @@ const COLOR_CODES = {
   }
 };
 
-const TIME_LIMIT = convert(localStorage.getItem('a'));
+const TIME_LIMIT = temptime;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;

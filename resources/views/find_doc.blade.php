@@ -124,8 +124,9 @@ var startTime = performance.now();
  if({{$timer}})
     { $('#findnow').hide(); 
     $('#findnow').next('div').show();
-      previousresend();
+    
       // alert(localStorage.getItem('a'));
+      previousresend();
 
     }
   </script>
