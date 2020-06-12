@@ -143,8 +143,6 @@ else if(localStorage.getItem("status") === 'no')
       
       
     });
-  </script>
-  <script type="text/javascript">
   	$('#available').on('click',function(){
   		$('#find-doc').modal({
             backdrop: 'static',
