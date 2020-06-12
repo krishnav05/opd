@@ -120,13 +120,7 @@ var startTime = performance.now();
       window.location = '/chatify';
     });
 
-    if({{$timer}})
-    {	$('#findnow').hide();	
-		$('#findnow').next('div').show();
-    	previousresend();
-      // alert(localStorage.getItem('a'));
-
-    }
+   
      $(window).bind('beforeunload',function(){
 //do something
 localStorage.setItem('a',document.getElementById("base-timer-label").innerText);
@@ -300,6 +294,12 @@ function setCircleDasharray() {
     clearInterval(window.my);
   });
   }
+ if({{$timer}})
+    { $('#findnow').hide(); 
+    $('#findnow').next('div').show();
+      previousresend();
+      // alert(localStorage.getItem('a'));
 
+    }
   </script>
 @endsection
