@@ -11,8 +11,8 @@
   </div> -->
 
   <div class="row">
-    <div class="col otp-card" style="margin-top: 0;">
-      <h1>Pay & start chatting now </h1>
+    <div class="col otp-card">
+      <h1 class="mb-2">Pay & start chatting now </h1>
       <form action="" method="get" id="">
         <div class="form-check mt-2 pl-0">
           <ul class="pay-option">
