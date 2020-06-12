@@ -169,7 +169,7 @@ else if(localStorage.getItem("status") === 'no')
                         
                         $('#pickup-call').modal('hide');
                         $('#audio')[0].pause();
-                        alert('Call picked up by another doctor');
+                        alert('This patient is consulting with another doctor');
                     }
                       }
                 });

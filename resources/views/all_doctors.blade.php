@@ -27,7 +27,7 @@
       @endif
       @endforeach
       <td>{{$doctor['email']}}</td>
-      <td><img src="/storage/doctors/{{$doctor['avatar']}}" height="50px" width="50px" alt="Italian Trulli"></td>
+      <td><img src="/storage/users-avatar/{{$doctor['avatar']}}" height="50px" width="50px" alt="Italian Trulli"></td>
     </tr>
     @endforeach
   </tbody>
