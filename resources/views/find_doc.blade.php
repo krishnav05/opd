@@ -124,7 +124,7 @@ var startTime = performance.now();
     {	$('#findnow').hide();	
 		$('#findnow').next('div').show();
     	previousresend();
-      alert(localStorage.getItem('a'));
+      // alert(localStorage.getItem('a'));
 
     }
      $(window).bind('beforeunload',function(){

@@ -8,6 +8,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   @yield('css')
   <!-- Bootstrap CSS -->
+  <link rel="apple-touch-icon" href="{{asset('assets/img/touch-icon-iphone.png')}}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;500&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/opd.css')}}">
@@ -21,7 +22,7 @@
         
         <div class="col text-left pl-0"> @if(Auth::check()) @if(isset($doctorprofile)) <a href="call-pickup"><i class="fa fa-chevron-left fa-2x"></i></a> @endif @if(Auth::check()) @if(isset($check)) <a onclick="window.history.back();"> <i class="fa fa-chevron-left fa-2x"></i></a>  @else  @if(isset($doctorprofile)) @else <a class="fa fa-history fa-2x text-center" href="/history"> <span class="d-block">History</span></a>@endif @endif @endif @endif @if(isset($contact)) <a onclick="window.history.back();"> <i class="fa fa-chevron-left fa-2x"></i></a>  @endif</div>
         <div class="col text-center"> <a href="/" class="logo"> only<span>OPD</span> </a> </div>
-        <div class="col text-right pr-0">@if(Auth::check()) @if(isset($check)) @else<a class="credit text-center" @if(Auth::check() && Auth::user()->role_id == 3) href="profile" @else href="" onclick="return false;" @endif> @if(Auth::check() && Auth::user()->role_id == 3) <span class="
+        <div class="col text-right pr-0">@if(Auth::check()) @if(isset($check)) @else<a class="credit text-center" @if(Auth::check() && Auth::user()->role_id == 3) href="profile" @else href="credits" @endif> @if(Auth::check() && Auth::user()->role_id == 3) <span class="
           credit-box doc-profile"><img src="/storage/users-avatar/{{Auth::user()->avatar}}" style="border-radius: 50%; height: 40px; width: 40px;" > @else <span class="
           credit-box"> @if(isset($credit)) {{$credit}} @else 0 @endif @endif</span>@if(Auth::check() && Auth::user()->role_id == 3) @else <span class="d-block"> Credits</span> @endif </a> @endif @endif</div>
         </div>

@@ -120,6 +120,7 @@ else if(localStorage.getItem("status") === 'no')
       // alert(JSON.stringify(data));
       if(data.status == 'alert')
       {
+        clearTimeout(window.temp);
         if($('#check').is(":checked") == false)
       {
         $('#pickup-call').modal({
@@ -165,8 +166,14 @@ else if(localStorage.getItem("status") === 'no')
                     	{
                     		window.location = '/chatify';
                     	}
-                       
+                      if(data.status == 'fail')
+                      {
+                        
+                        $('#pickup-call').modal('hide');
+                        $('#audio')[0].pause();
+                        alert('Call picked up by another doctor');
                     }
+                      }
                 });
   	});
 //   	$(function(){
@@ -182,6 +189,34 @@ $('#endcall').on('click',function(){
   $('#pickup-call').modal('hide');
       $('#audio')[0].pause();
 });
+var temp = setTimeout(function(){
+  var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+                    /* the route pointing to the post function */
+                    url: "autocheck",
+                    type: 'POST',
+                    /* send the csrf-token and the input to the controller */
+                    data: {_token: CSRF_TOKEN},
+                    dataType: 'JSON',
+                    /* remind that 'data' is the response of the AjaxController */
+                    success: function (data) { 
+                      if(data.success == 'success')
+                      {
+                       if($('#check').is(":checked") == false)
+      {
+        $('#pickup-call').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+      $('#audio')[0].play();
+      localStorage.setItem("id",data.id);
+      window.patientid = data.id;
+      }  
+                      }
+                      }
+                });
+ }, 2000);
+
   </script>
 
 @endsection

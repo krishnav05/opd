@@ -207,4 +207,27 @@ class DoctorController extends Controller
         Session::flush();
         return redirect()->route('doctorlogin');
     }
+
+    public function autocheck(Request $request)
+    {
+        $check = Consultations::where('doctorId',null)->where('completed',null)->first();
+
+        if($check)
+        {
+            $id = $check['patientId'];
+            $response = array(
+                    'success' => 'success',
+                    'id'    => $id,
+                );
+
+        return response()->json($response);
+
+        }
+
+        $response = array(
+                    'success' => 'fail',
+                );
+
+        return response()->json($response);
+    }
 }

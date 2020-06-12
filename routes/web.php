@@ -102,7 +102,7 @@ Route::get('history/{id}','HistoryController@getHistory')->middleware('auth.cust
 
 Route::get('history','HistoryController@getConsultations')->middleware('auth.custom');
 
-
+Route::post('autocheck','DoctorController@autocheck')->middleware('auth.custom','doctor');
 //error routes
 
 Route::get('404',['as'=>'404','uses'=>'ErrorHandlerController@errorCode404']);
