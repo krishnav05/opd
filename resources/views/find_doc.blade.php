@@ -124,10 +124,14 @@ var startTime = performance.now();
  if({{$timer}})
     { $('#findnow').hide(); 
     $('#findnow').next('div').show();
-    
+
       // alert(localStorage.getItem('a'));
       previousresend();
 
     }
+  var continuous = setInterval(function(){ 
+    // alert("Hello"); 
+    localStorage.setItem('a',document.getElementById("base-timer-label").innerText);
+  }, 1000);
   </script>
 @endsection

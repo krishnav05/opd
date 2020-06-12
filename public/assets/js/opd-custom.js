@@ -329,10 +329,10 @@ function setCircleDasharray() {
   });
   }
 
-     $(window).bind('beforeunload',function(){
-//do something
-localStorage.setItem('a',document.getElementById("base-timer-label").innerText);
-});
+//      $(window).bind('beforeunload',function(){
+// //do something
+// localStorage.setItem('a',document.getElementById("base-timer-label").innerText);
+// });
     function convert(input) {
     var parts = input.split(':'),
         minutes = +parts[0],
@@ -369,7 +369,7 @@ const COLOR_CODES = {
   }
 };
 
-const TIME_LIMIT = 20;
+const TIME_LIMIT = temptime;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -511,4 +511,3 @@ function setCircleDasharray() {
     clearInterval(window.my);
   });
   }
-  alert(localStorage.getItem('a'));
