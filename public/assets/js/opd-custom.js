@@ -1,5 +1,6 @@
 
 var my;
+var ty;
   $('#findnow').on('click',function(){
     $(this).hide();
     $(this).next('div').show();
@@ -167,6 +168,7 @@ function setCircleDasharray() {
     document.getElementById("app").innerHTML = ``;
     clearInterval(timerInterval);
     clearInterval(window.my);
+    clearInterval(window.ty);
   });
   });
   function resend()
@@ -326,6 +328,7 @@ function setCircleDasharray() {
     document.getElementById("app").innerHTML = ``;
     clearInterval(timerInterval);
     clearInterval(window.my);
+    clearInterval(window.ty);
   });
   }
 
@@ -380,7 +383,7 @@ function onTimesUp() {
   $('#endnow').show();
   document.getElementById("app").innerHTML = `<div style="text-align: center;">It's taking more time than usual,<br>
   <strong>Doctors</strong> are busy with <strong>other patients.</strong><br>Please give us few more minutes.</div>`;
-  setTimeout(function(){ resend();
+  window.ty = setTimeout(function(){ resend();
        window.my = setInterval(resend, 190000); }, 10000);
 
     
@@ -509,5 +512,6 @@ function setCircleDasharray() {
     document.getElementById("app").innerHTML = ``;
     clearInterval(timerInterval);
     clearInterval(window.my);
+    clearInterval(window.ty);
   });
   }
