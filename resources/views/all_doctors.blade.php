@@ -12,6 +12,8 @@
       <th scope="col">Current Hospital</th>
       <th scope="col">Username</th>
       <th scope="col">Profile Photo</th>
+      <th scope="col">Account Status</th>
+      <th scope="col">Change Status</th>
     </tr>
   </thead>
   <tbody>
@@ -28,6 +30,16 @@
       @endforeach
       <td>{{$doctor['email']}}</td>
       <td><img src="/storage/users-avatar/{{$doctor['avatar']}}" height="50px" width="50px" alt="Italian Trulli"></td>
+      <td>@if($doctor['enable'] == 1)
+        Enabled
+        @else
+        Disabled
+        @endif</td>
+        <td>@if($doctor['enable'] == 1)
+        <a href="/admin/disab/{{$doctor['id']}}">Disable</a>
+        @else
+        <a href="/admin/enab/{{$doctor['id']}}">Enable</a>
+        @endif</td>
     </tr>
     @endforeach
   </tbody>

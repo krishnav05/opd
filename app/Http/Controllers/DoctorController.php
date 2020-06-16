@@ -34,8 +34,8 @@ class DoctorController extends Controller
 
     public function login(Request $request)
     {
-    	$user = User::where('email',$request->username)->first();
-
+    	$user = User::where('email',$request->username)->where('enable',1)->first();
+        $check = User::where('email',$request->username)->where('enable',0)->first();
     	if($user)
     	{
     		if(Hash::check($request->password, $user->password))
@@ -47,7 +47,18 @@ class DoctorController extends Controller
     			return redirect()->back()->with('success','Wrong Credentials');
     	}
     	else
-    		return redirect()->back()->with('success','Wrong Credentials');
+        {
+            if($check)
+            {
+                return redirect()->back()->with('success','Account Disabled');
+            }
+            else
+            {
+                return redirect()->back()->with('success','Wrong Credentials');
+            }
+
+    		
+        }
     }
 
     public function callPickup()

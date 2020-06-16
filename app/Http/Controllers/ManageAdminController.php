@@ -104,4 +104,17 @@ class ManageAdminController extends Controller
     	User::where('phone',$request->number)->update(['enable'=>0]);
     	return redirect()->back();
     }
+
+    public function enab(Request $request)
+    {
+        User::where('id',$request->number)->update(['enable'=>1]);
+        return redirect()->back();
+    }
+
+    
+    public function disab(Request $request)
+    {
+        User::where('id',$request->number)->update(['enable'=>0]);
+        return redirect()->back();
+    }
 }

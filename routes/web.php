@@ -43,6 +43,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('enable/{number}','ManageAdminController@enableAccount')->middleware('admin.user');
 
     Route::get('disable/{number}','ManageAdminController@disableAccount')->middleware('admin.user');
+
+    Route::get('enab/{number}','ManageAdminController@enab')->middleware('admin.user');
+
+    Route::get('disab/{number}','ManageAdminController@disab')->middleware('admin.user');
 });
 
 //custom routes made by developer

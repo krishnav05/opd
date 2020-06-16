@@ -14,9 +14,7 @@
     <div class="col otp-card">
     	@if (\Session::has('success'))
     <div class="alert alert-error">
-        <ul>
-            <li>{!! \Session::get('success') !!}</li>
-        </ul>
+        {!! \Session::get('success') !!}
     </div>
 @endif
       <h1>Doctor Sign-In</h1>
