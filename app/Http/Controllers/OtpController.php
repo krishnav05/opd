@@ -182,15 +182,15 @@ class OtpController extends Controller
       $new->amount = $request->amount;
       $new->save();
       
-      if($request->amount == 400)
+      if($request->amount == 650)
       {
         Auth::user()->increment('credits',5);
       }
-      else if($request->amount == 175)
+      else if($request->amount == 275)
       {
         Auth::user()->increment('credits',2);
       }
-      else if($request->amount == 99)
+      else if($request->amount == 150)
       {
         Auth::user()->increment('credits',1);
       }
