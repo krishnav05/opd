@@ -116,4 +116,5 @@ $('#pick').on('click',function(){
   gtag('js', new Date());
 
   gtag('config', 'UA-167493010-1');
+  gtag('event', 'conversion', { 'send_to': 'AW-632963198/K85ICIr9o9YBEP6A6a0C', 'transaction_id': '' });
 </script>

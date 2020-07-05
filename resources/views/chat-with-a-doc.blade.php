@@ -586,6 +586,7 @@
       gtag('js', new Date());
 
       gtag('config', 'UA-167493010-1');
+      gtag('config', 'AW-632963198');
     </script>
   </body>
 </html>
