@@ -17,25 +17,25 @@
         <div class="form-check mt-2 pl-0">
           <ul class="pay-option">
             <li> 
-              <input class="form-check-input" type="radio" name="amount" id="exampleRadios1" value="150" checked>
+              <input class="form-check-input" type="radio" name="amount" id="exampleRadios1" value="199" checked>
               <label class="form-check-label" for="exampleRadios1">
                 1 Consultation <p> Chat, audio & video consultation now. </p>
               </label>
-              <span class="fee"> ₹150 <br> <b>₹400</b></span>
+              <span class="fee"> ₹199 <br> <b>₹500</b></span>
             </li>
             <li> 
-              <input class="form-check-input" type="radio" name="amount" id="exampleRadios1" value="275">
+              <input class="form-check-input" type="radio" name="amount" id="exampleRadios1" value="360">
               <label class="form-check-label" for="exampleRadios1">
                 2 Consultation <p> Chat, audio & video consultation now. </p>
               </label>
-              <span class="fee"> ₹275 <br> <b>₹800</b></span>
+              <span class="fee"> ₹360 <br> <b>₹1000</b></span>
             </li>
             <li> 
-              <input class="form-check-input" type="radio" name="amount" id="exampleRadios1" value="650">
+              <input class="form-check-input" type="radio" name="amount" id="exampleRadios1" value="850">
               <label class="form-check-label" for="exampleRadios1">
                 5 Consultation <p> Chat, audio & video consultation now. </p>
               </label>
-              <span class="fee"> ₹650 <br> <b>₹2000</b></span>
+              <span class="fee"> ₹850 <br> <b>₹2500</b></span>
             </li>
           </ul>
           <input id="paynow" type="button" value="Select payment method" class="btn btn-primary form-control form-control-lg mt-3">
