@@ -4,7 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Consult with India's top doctors online from home Under 3 minutes. No travelling, no waiting. Experienced Doctors In Helping OPD Patients. They Can Speak Hindi, English and other local languages. ">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -40,10 +41,63 @@
   </div>
   <div class="row">
     <div class="col">
-      <img src="assets/img/Take-an-online-doctor-consultation-now.png" class="img-fluid"> 
+      <img src="assets/img/Take-an-online-doctor-consultation-now.png" alt="Video & Text Chat With A Doctor" class="img-fluid"> 
     </div>
   </div>
+
+<br>  
+<div class="row">
+    <div class="col">
   
+    <h1 class="text-left"> How to start online consultation </h1>
+        <p class="mt-4">STEP 1: Verify your phone number with an OTP </p>
+    <p class="mt-4">STEP 2: Purchase a credit </p>
+    <p class="mt-4">STEP 3: Find doctor & start consulting </p>
+  </div>
+</div>  
+
+ <div class="row">
+   <div class="col pl-0 pr-0">
+      <p class="pl-4 pr-4"><a href="https://onlyopd.com" class="btn btn-primary col mt-4 mb-4"> Consult With A Doctor</a></p>
+   </div>
+</div>
+
+  
+  
+  
+  
+  <div class="row">
+    <div class="col"><br></div>
+    </div>
+
+  <div class="row">
+      <div class="col">
+      <h1 class="text-left"> Get an advice on </h1>
+      <p class="mt-4"><a href="https://onlyopd.com" ><li> Fever, Dry Cough or Body Pain </li></a></p>
+      <p class="mt-4"><a href="https://onlyopd.com" ><li>Swollen Lips, Tongue, Eyes or Face
+  </li></a></p>
+      
+      <p class="mt-4"><a href="https://onlyopd.com" ><li>Hives (itchy red spots on the skin)  </li></a></p>
+      
+      <p class="mt-4"><a href="https://onlyopd.com" ><li>Pink or Red Color in the White of the eye(s)  </li></a></p>
+      
+      <p class="mt-4"><a href="https://onlyopd.com" ><li>Shortness of Breath, Wheezing or Repetitive cough  </li></a></p>
+      
+      <p class="mt-4"><a href="https://onlyopd.com" ><li>Difficulty Breathing or Shortness of Breath  </li></a></p>
+      <p class="mt-4"><a href="https://onlyopd.com" ><li>Chest Pain or Pressure  </li></a></p>
+      <p class="mt-4"><a href="https://onlyopd.com" ><li>Abdomen Pain, Feeling Sick, Vomiting or Diarrhoea  </li></a></p>
+      <p class="mt-4"><a href="https://onlyopd.com" ><li>Dry, Red and Cracked Skin  </li></a></p>
+      <p class="mt-4"><a href="https://onlyopd.com" ><li>Persistent Vomiting, Mucosal Bleed, Restlessness   </li></a></p>
+    </div>
+  </div>      
+</div>
+    
+ <div class="row">
+   <div class="col pl-0 pr-0">
+      <p class="pl-4 pr-4"><a href="https://onlyopd.com" class="btn btn-primary col mt-4 mb-4"> Consult With A Doctor</a></p>
+    
+    <p class="mt-4"><br><br> </p>
+   </div>
 </div>
 
 <div class="modal fade" id="terms" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -565,7 +619,7 @@
 </div>
 
 
-<footer class="text-center p-2">
+<footer class="text-center p-2 fixed-bottom">
       <div class="container"> <a onclick="$('#terms').modal({
             backdrop: 'static',
             keyboard: false
