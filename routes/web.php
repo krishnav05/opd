@@ -115,18 +115,18 @@ Route::get('405',['as'=>'405','uses'=>'ErrorHandlerController@errorCode405']);
 
 //landing pages
 
-Route::get('chat-with-a-doctor-online',function(){
-  return view('chat-with-a-doc');
-});
+// Route::get('chat-with-a-doctor-online',function(){
+//   return view('chat-with-a-doc');
+// });
 
-Route::get('consult-with-a-doctor-now',function(){
-  return view('consult-with-a-doctor-now');
-});
+// Route::get('consult-with-a-doctor-now',function(){
+//   return view('consult-with-a-doctor-now');
+// });
 
-Route::get('take-online-doctor-consultation',function(){
-  return view('take-online-doctor-consultation');
-});
+// Route::get('take-online-doctor-consultation',function(){
+//   return view('take-online-doctor-consultation');
+// });
 
-Route::get('your-family-is-too-precious-to-take-risk',function(){
-  return view('your-family-is-too-precious-to-take-risk');
-});
+// Route::get('your-family-is-too-precious-to-take-risk',function(){
+//   return view('your-family-is-too-precious-to-take-risk');
+// });
