@@ -1,0 +1,101 @@
+body{
+    background: #fafafa;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: #255985;
+    font-size: 14px;
+	}
+header{
+		padding: 10px 20px;
+		background: #6CA5C6;
+		color: #fff;
+	  }
+header a{
+			color: #fff;
+			text-decoration: none !important;
+		}
+header a:hover{
+				color: #255985;
+				text-decoration: none !important;
+			  }
+header a span{
+				font-size: .75rem;
+				font-family: 'Barlow Semi Condensed', sans-serif;
+				text-transform: uppercase;
+				white-space: pre;
+			 }
+header a.logo{
+				font-size: 1.5rem !important;
+				font-weight: 300;
+				display: block;
+				margin-top: 4px;
+	 		  }
+header a.logo span{
+					font-size: 1.5rem !important;
+					font-weight: 500;
+				  }
+h1{
+	font-size: 1.5rem;
+	text-transform: capitalize;
+  }
+a{
+	color: #255985;
+	text-decoration: none;
+ }
+a:hover{
+	
+		 text-decoration: none;
+ 		}
+.btn-primary{
+				background-color: #255985;
+				border-color: #255985;
+				text-transform: uppercase;
+				font-weight: 500;
+				border-radius: 6px;
+				width: 400px;
+			}
+.btn-primary:hover{
+					background-color: #232B59;
+				  }
+.btn-primary.form-control-lg{border-radius: 6px !important;}
+.live-ad-doc {
+			    color: #00C34B;
+			    font-size: 2.5em;
+			}
+footer{
+		font-weight: 300;
+		font-size: 14px;
+	  }
+footer a{
+			text-decoration: none !important;
+			color:#255985;
+			margin: .5rem;
+		}
+
+
+
+
+
+@media (min-width:1025px) {
+
+								.container{
+											width: 50% !important;
+											background: #ffffff;
+											
+										   }
+						   }
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
