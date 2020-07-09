@@ -41,7 +41,7 @@
 
 @section('footer')
 <footer class="text-center p-2">
-      <div class="container"> <a href="/terms/index.html" target="_blank"> Terms </a> | <a href="/privacy/index.html" target="_blank"> Privacy </a> | &nbsp; 2020 &copy; Copyrights onlyOPD </div>
+      <div class="container"> <a href="/terms" target="_blank"> Terms </a> | <a href="/privacy" target="_blank"> Privacy </a> | &nbsp; 2020 &copy; Copyrights onlyOPD </div>
     </footer>
 <script type="text/javascript">
 
