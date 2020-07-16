@@ -10,6 +10,8 @@
       <th scope="col">Action</th>
       <th scope="col">Account Status</th>
       <th scope="col">Change Account Status</th>
+      <th scope="col">Account Creation Date</th>
+      <th scope="col">Login Location</th>
     </tr>
   </thead>
   <tbody>
@@ -32,7 +34,8 @@
         <a href="/admin/enable/{{$patient['phone']}}">Enable</a>
         @endif
       </td>
-
+      <td>{{$patient['created_at']}}</td>
+      <td>{{$patient['location']}}</td>
     </tr>
     @endforeach
 

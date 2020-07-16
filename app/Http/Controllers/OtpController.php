@@ -16,6 +16,8 @@ class OtpController extends Controller
     		'phone' => 'required|numeric|digits:10',
     	]);
 
+      $location = geoip($ip = $request->ip());
+
     	$check = User::where('phone',$validatedData['phone'])->first();
 
     	if($check)
@@ -25,7 +27,7 @@ class OtpController extends Controller
         return redirect()->back();
       }
     		$otp = rand(1000,9999);
-            User::where('phone',$validatedData['phone'])->update(['otp'=>$otp]);
+            User::where('phone',$validatedData['phone'])->update(['otp'=>$otp,'location'=>$location->city]);
             //send message with otp here
 
             $curl = curl_init();
@@ -63,6 +65,7 @@ class OtpController extends Controller
     		$patient = new User;
     		$patient->phone = $validatedData['phone'];
     		$patient->password = bcrypt('Default');
+        $patient->location = $location->city;
     		$patient->save();
 
     		$otp = rand(1000,9999);
