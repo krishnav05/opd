@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;500&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/opd.css')}}">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <title>onlyOPD</title>
+  <title>doksaa</title>
 </head>
 <body>
   <header>
@@ -21,7 +21,7 @@
       <div class="row m-0">
         
         <div class="col text-left pl-0"> @if(Auth::check()) @if(isset($doctorprofile)) <a href="call-pickup"><i class="fa fa-chevron-left fa-2x"></i></a> @endif @if(Auth::check()) @if(isset($check)) <a onclick="window.history.back();"> <i class="fa fa-chevron-left fa-2x"></i></a>  @else  @if(isset($doctorprofile)) @else <a class="fa fa-history fa-2x text-center" href="/history"> <span class="d-block">History</span></a>@endif @endif @endif @endif @if(isset($contact)) <a onclick="window.history.back();"> <i class="fa fa-chevron-left fa-2x"></i></a>  @endif</div>
-        <div class="col text-center"> <a href="/" class="logo"> only<span>OPD</span> </a> </div>
+        <div class="col text-center"> <a href="/" class="logo"> <img src="/assets/img/doksaa.png"> </a> </div>
         <div class="col text-right pr-0">@if(Auth::check()) @if(isset($check)) @else<a class="credit text-center" @if(Auth::check() && Auth::user()->role_id == 3) href="profile" @else href="credits" @endif> @if(Auth::check() && Auth::user()->role_id == 3) <span class="
           credit-box doc-profile"><img src="/storage/users-avatar/{{Auth::user()->avatar}}" style="border-radius: 50%; height: 40px; width: 40px;" > @else <span class="
           credit-box"> @if(isset($credit)) {{$credit}} @else 0 @endif @endif</span>@if(Auth::check() && Auth::user()->role_id == 3) @else <span class="d-block"> Credits</span> @endif </a> @endif @endif</div>
@@ -69,7 +69,7 @@
     <script type="text/javascript" src="{{asset('assets/js/opd-custom.js')}}"></script>
 
     <footer class="text-center p-2">
-      <div class="container"> <a href="https://doksaa.com/terms.html" target="_blank"> Terms </a> | <a href="https://doksaa.com/privacy.html" target="_blank"> Privacy </a> | &nbsp; 2020 &copy; Copyrights onlyOPD </div>
+      <div class="container"> <a href="https://doksaa.com/terms.html" target="_blank"> Terms </a> | <a href="https://doksaa.com/privacy.html" target="_blank"> Privacy </a> | &nbsp; 2020 &copy; Copyrights doksaa </div>
     </footer>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167493010-1"></script>
