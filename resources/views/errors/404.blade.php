@@ -10,6 +10,6 @@
 <body>
 <div class="text-center">
 	<img src="/assets/img/404-error.png" class="img-fluid m-4">
-	<p style="text-align: center;align-items: center;font-size: 36px;"><a href="https://onlyopd.com" style="color: #fff;background: #255985;padding: 20px 40px;border-radius: 10px;font-size: 18px;margin-top: 20px;">LOGIN AGAIN</a></p>
+	<p style="text-align: center;align-items: center;font-size: 36px;"><a href="https://app.doksaa.com" style="color: #fff;background: #255985;padding: 20px 40px;border-radius: 10px;font-size: 18px;margin-top: 20px;">LOGIN AGAIN</a></p>
 </body>
 </html>
