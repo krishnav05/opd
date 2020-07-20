@@ -17,7 +17,7 @@
   <tbody>
     @foreach($patients as $patient)
     <tr>
-      <th scope="row">{{ ($patients->currentpage()-1) * $patients->perpage() + $loop->index + 1 }}</th>
+      <th scope="row">{{ ($patients->total()-$loop->index)-(($patients->currentpage()-1) * $patients->perpage() ) }}</th>
       <td>+91 {{$patient['phone']}}</td>
       <td><a href="/admin/patients/{{$patient['phone']}}">View Details</a> </td>
       <td>

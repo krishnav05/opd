@@ -60,7 +60,7 @@ class ManageAdminController extends Controller
 
     public function getPatients()
     {	
-    	$patients = User::where('role_id',2)->orderBy('id', 'DESC')->simplePaginate(15);
+    	$patients = User::where('role_id',2)->orderBy('id', 'DESC')->Paginate(15);
 
     	return view('admin_patients',['patients'=>$patients]);
     }
