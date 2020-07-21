@@ -100,7 +100,7 @@
        var options = {
         key: "{{ env('RAZORPAY_KEY') }}",
         amount: ($("input[name='amount']:checked").val()*100),
-        name: 'OPD',
+        name: 'Doksaa',
         description: 'Consultation',
         image: '',
         handler: demoSuccessHandler
