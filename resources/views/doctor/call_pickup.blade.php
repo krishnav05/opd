@@ -98,6 +98,7 @@ else if(localStorage.getItem("status") === 'no')
 
   });
 	var patientid;
+  var doctorId = {!! Auth::user()->id !!};
     // Enable pusher logging - don't include this in production
     Pusher.logToConsole = true;
 
@@ -119,6 +120,19 @@ else if(localStorage.getItem("status") === 'no')
     channel.bind('notify-doctor', function(data) {
       // alert(JSON.stringify(data));
       if(data.status == 'alert')
+      {
+        if($('#check').is(":checked") == false)
+      {
+        $('#pickup-call').modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+      $('#audio')[0].play();
+      localStorage.setItem("id",data.id);
+      window.patientid = data.id;
+      } 
+      }
+      if(data.status == 'reconsult' && data.doctorId == window.doctorId)
       {
         if($('#check').is(":checked") == false)
       {

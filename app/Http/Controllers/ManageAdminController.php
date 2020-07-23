@@ -117,4 +117,13 @@ class ManageAdminController extends Controller
         User::where('id',$request->number)->update(['enable'=>0]);
         return redirect()->back();
     }
+
+    public function doctorDetails($id)
+    {   
+        $consultations = Consultations::where('doctorId',$id)->get();
+
+        $patients = User::where('role_id',2)->get();
+
+        return view('doctor_details',['consultations'=>$consultations,'patients'=>$patients]);
+    }
 }

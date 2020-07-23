@@ -14,6 +14,7 @@
       <th scope="col">Profile Photo</th>
       <th scope="col">Account Status</th>
       <th scope="col">Change Status</th>
+      <th scope="col">Details</th>
     </tr>
   </thead>
   <tbody>
@@ -40,6 +41,7 @@
         @else
         <a href="/admin/enab/{{$doctor['id']}}">Enable</a>
         @endif</td>
+        <td><a href="/admin/doctor/{{$doctor['id']}}">View Details</a></td>
     </tr>
     @endforeach
   </tbody>

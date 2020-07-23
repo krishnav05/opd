@@ -47,6 +47,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('enab/{number}','ManageAdminController@enab')->middleware('admin.user');
 
     Route::get('disab/{number}','ManageAdminController@disab')->middleware('admin.user');
+
+    Route::get('doctor/{id}','ManageAdminController@doctorDetails')->middleware('admin.user');
 });
 
 //custom routes made by developer
@@ -61,6 +63,8 @@ Route::post('dopayment', 'Patient\RazorpayController@dopayment')->name('dopaymen
 Route::post('addcredits','OtpController@add')->middleware('auth.custom','patient');
 
 Route::post('find-doc','FindController@alertDoctor')->middleware('auth.custom','patient');
+
+Route::post('reconsult-doc','FindController@reconsultDoctor')->middleware('auth.custom','patient');
 
 Route::post('alert-end','FindController@endAlert')->middleware('auth.custom','patient');
 

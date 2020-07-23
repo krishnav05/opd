@@ -53,7 +53,7 @@ class FindController extends Controller
         }
         
 
-		event(new NotifyDoctor($id,'alert'));
+		event(new NotifyDoctor($id,'alert','none'));
 
                 $response = array(
                     'id' => $id,
@@ -61,6 +61,46 @@ class FindController extends Controller
 
                 return response()->json($response);        
 
+    }
+
+    public function reconsultDoctor(Request $request)
+    {   
+        //check for credits
+        if(Auth::user()->credits == 0)
+        {
+            $response = array(
+                    'status' => 'addcredits',
+                );
+
+                return response()->json($response);
+        }
+
+
+        $id = Auth::user()->id;
+        // $text = request()->text;
+        $location = geoip($ip = $request->ip());
+
+        $check = Consultations::where('patientId',$id)->where('completed',null)->first();
+        if($check)
+        {
+
+        }
+        else{
+            $new = new Consultations;
+        $new->patientId = $id;
+        $new->patient_location = $location->city;
+        $new->requested_doctor = $request->doctorId;
+        $new->save();
+        }
+        
+
+        event(new NotifyDoctor($id,'reconsult',$request->doctorId));
+
+                $response = array(
+                    'id' => $id,
+                );
+
+                return response()->json($response);
     }
 
     public function endAlert(Request $request)
