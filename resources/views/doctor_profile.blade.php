@@ -4,7 +4,7 @@
 
 <div class="container">
 
-<h1 class="text-center mb-5 mt-5">Top Rated Doctors Available For You To Text & Video Chat Now.</h1>  
+<h1 class="text-center mb-5 mt-5">Top Rated Doctors Available* For You To Text & Video Chat Now.</h1>  
   
 </div>
 

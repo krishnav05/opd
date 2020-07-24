@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-  <h6 class="text-center mt-5">We may reach out to another top doctor with similar qualification if your doctor is busy</h6>
+  <p style="font-size: 12px;text-align: center;" class="mt-5 center">We may reach out to another top doctor with similar qualification if your doctor is busy</p>
   <div class="row">
     <div class="col text-center">
       <img src="{{asset('assets/img/hero-find-doc.svg')}}" class="img-fluid mt-3 ">
