@@ -3,9 +3,7 @@
 @section('content')
 
 <div class="container">
-  <div class="alert alert-warning mt-3" role="alert" style="text-align: center;">
-    You may connect with a different doctor with similar qualification if the selected doctor is busy in another consultation
-  </div>
+  <h6 class="text-center mt-5">We may reach out to another top doctor with similar qualification if your doctor is busy</h6>
   <div class="row">
     <div class="col text-center">
       <img src="{{asset('assets/img/hero-find-doc.svg')}}" class="img-fluid mt-3 ">

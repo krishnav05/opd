@@ -4,10 +4,7 @@
 
 <div class="container">
 
-<h1 class="text-center mb-5 mt-5">Top Rated Doctors Available For You To Text & Video Chat Now.</h1>
-<h6 class="text-center mb-5 mt-5">You may connect with a different doctor with similar qualification if the 
-selected doctor is busy in another consultation</h6>
-  
+<h1 class="text-center mb-5 mt-5">Top Rated Doctors Available For You To Text & Video Chat Now.</h1>  
   
 </div>
 
@@ -144,6 +141,10 @@ selected doctor is busy in another consultation</h6>
   
 
   </div>
+</div>
+<div class="container">
+  
+  <h6 class="text-center mb-4 ">We may reach out to another top doctor with similar qualification if your doctor is busy</h6>
 </div>
 @endsection
 
