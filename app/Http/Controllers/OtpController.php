@@ -163,7 +163,7 @@ class OtpController extends Controller
             if(User::where('phone',$request->number)->value('credits') == 0)
             { 
               
-              return redirect()->route('credits')->with(['credit' => $credit]);
+              return redirect()->route('doctorprofile')->with(['credit' => $credit]);
             }
             else
             {
@@ -206,6 +206,11 @@ class OtpController extends Controller
       {
         if(Auth::user()->role_id == 2)
         {
+          if(Auth::user()->credits == 0)
+            { 
+              $credit = Auth::user()->credits;
+              return redirect()->route('doctorprofile')->with(['credit' => $credit]);
+            }
           return redirect()->route('find.doctor');
         }
         else

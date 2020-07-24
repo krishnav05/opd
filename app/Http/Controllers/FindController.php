@@ -118,4 +118,11 @@ class FindController extends Controller
                 return response()->json($response);
     }
 
+    public function docProfile()
+    {   
+        $credit = Auth::user()->credits;
+
+        return view('doctor_profile',['credit'=>$credit]);
+    }
+
 }

@@ -3,7 +3,9 @@
 @section('content')
 
 <div class="container">
-  
+  <div class="alert alert-warning mt-3" role="alert" style="text-align: center;">
+    You may connect with a different doctor with similar qualification if the selected doctor is busy in another consultation
+  </div>
   <div class="row">
     <div class="col text-center">
       <img src="{{asset('assets/img/hero-find-doc.svg')}}" class="img-fluid mt-3 ">
@@ -16,7 +18,7 @@
   
   <div id="card" class="col otp-card" style="text-align: center;margin-left: 0;margin-right: 0;">
       <h6>You have <strong style="color: black;">{{$credit}} credit.</strong></h6>
-      <input id="findnow" type="button" value="Consult Doctor Now" class="btn btn-primary form-control form-control-lg mt-3">
+      <input id="findnow" type="button" value="Connect Doctor" class="btn btn-primary form-control form-control-lg mt-3">
   <div id="divs" style="display: none;"><h1 class="text-center mb-4">hang on! <br> finding a doctor for you</h1 class="text-center"></div>
     <!-- <input id="endnow" type="button" value="Stop Findind Doctor" class="btn btn-primary form-control form-control-lg mt-3" style="display: none;"> -->
     </div>
