@@ -3,11 +3,6 @@
 <head>
   <meta name="viewport" content="width=device-width">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <script
-        src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-        crossorigin="anonymous"></script>
-        
         <style type="text/css">
           html, body {
     height: 100%;
@@ -30,6 +25,10 @@ object {
 
 
 </body>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
 <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
 <script type="text/javascript">
           $("#siteloader").html('<object data="https://doksaa.com/select-doctor.html" />');
@@ -75,5 +74,4 @@ object {
     });
   
 </script>
-        </script>
 </html>
