@@ -31,7 +31,13 @@ object {
 </body>
 <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
 <script type="text/javascript">
-          $("#siteloader").html('<object data="https://doksaa.com/select-doctor.html" />');
+
+    $(document).ready(function(){
+   
+   $('#siteloader').load("https://doksaa.com/select-doctor.html");
+
+});
+          // $("#siteloader").load('https://doksaa.com/select-doctor.html');
             function demoSuccessHandler(transaction) {
 
         $.ajax({
