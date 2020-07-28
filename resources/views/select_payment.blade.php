@@ -17,7 +17,7 @@
         <div class="form-check mt-2 pl-0">
           <ul class="pay-option">
             <li> 
-              <input class="form-check-input" type="radio" name="amount" id="exampleRadios1" value="199" checked>
+              <input class="form-check-input" type="radio" name="amount" id="exampleRadios1" value="1" checked>
               <label class="form-check-label" for="exampleRadios1">
                 1 Consultation <p> Chat, audio & video consultation now. </p>
               </label>
