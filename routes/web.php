@@ -118,3 +118,7 @@ Route::get('404',['as'=>'404','uses'=>'ErrorHandlerController@errorCode404']);
 Route::get('405',['as'=>'405','uses'=>'ErrorHandlerController@errorCode405']);
 
 Route::get('doctor-profile','FindController@docProfile')->middleware('auth.custom','patient')->name('doctorprofile');
+
+Route::get('test',function(){
+    return view('test');
+});

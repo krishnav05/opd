@@ -1,156 +1,34 @@
-@extends('layouts.master')
-
-@section('content')
-
-<div class="container">
-
-<h1 class="text-center mb-5 mt-5">Top Rated Doctors Available* For You To Text & Video Chat Now.</h1>  
-  
-</div>
-
-<div class="container">
-  
-  <div class="row">
-    <div class="col otp-card">
-      <h1 class="text-center mb-3">  General Physician  </h1>
-      <div class="doc-found m-auto text-center">
-           <img src="/assets/img/abhisjek-kumar.jpg" class="doc-pic img-fluid img-fluid">
-           <a href="#" class="doc-tap"><i class="fa fa-mobile fa-2x"></i></a>
-           <h4>Available</h4>
-           <h5>Dr. Abhisjek Kumar</h5>
-        <h5>MBBS - 15 Years Experience</h5>
-      </div>
-      <p class="mt-3"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> </p> 
-        <p>(4.8 | 43 Reviews)</p>
-        <input type="button" value="Consult Doctor for ₹199" class="btn btn-primary form-control form-control-lg mt-3 paynow">
-    </div>
-    
-
-    <div class="col otp-card">
-      <h1 class="text-center mb-3">  Dermatology Consultation  </h1>
-      <div class="doc-found m-auto text-center">
-           <img src="/assets/img/amit-singhal.jpg" class="doc-pic img-fluid">
-           <a href="#" class="doc-tap"><i class="fa fa-mobile fa-2x"></i></a>
-           <h4>Available</h4>
-           <h5>Dr. Amit Singhal</h5>
-      <h5>MBBS, MD - 12 Years Experience</h5>
-      </div>
-      <p class="mt-3"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> </p> 
-        <p>(4.9 | 58 Reviews)</p>
-        <input type="button" value="Consult Doctor for ₹199" class="btn btn-primary form-control form-control-lg mt-3 paynow">
-    </div>
-   
-
-    <div class="col otp-card">
-      <h1 class="text-center mb-3">  ENT Consultant  </h1>
-      <div class="doc-found m-auto text-center">
-           <img src="/assets/img/Akshay-Singh.jpg" class="doc-pic img-fluid">
-           <a href="#" class="doc-tap"><i class="fa fa-mobile fa-2x"></i></a>
-           <h4>Available</h4>
-           <h5>Dr. Akshay Singh</h5>
-      <h5>MBBS - 11 Years Experience</h5>
-      </div>
-      <p class="mt-3"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> </p> 
-        <p>(4.8 | 31 Reviews)</p>
-        <input type="button" value="Consult Doctor for ₹199" class="btn btn-primary form-control form-control-lg mt-3 paynow">
-    </div>
-
-     <div class="col otp-card">
-      <h1 class="text-center mb-3">  Family Medicine  </h1>
-      <div class="doc-found m-auto text-center">
-           <img src="/assets/img/jyoti-singh.jpg" class="doc-pic img-fluid">
-           <a href="#" class="doc-tap"><i class="fa fa-mobile fa-2x"></i></a>
-           <h4>Available</h4>
-           <h5>Dr. Jyoti Singh</h5>
-      <h5>MBBS - 7 Years Experience</h5>
-      </div>
-      <p class="mt-3"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> </p> 
-        <p>(4.9 | 11 Reviews)</p>
-        <input type="button" value="Consult Doctor for ₹199" class="btn btn-primary form-control form-control-lg mt-3 paynow">
-    </div>
-
-     <div class="col otp-card">
-      <h1 class="text-center mb-3">  Gynecologist  </h1>
-      <div class="doc-found m-auto text-center">
-           <img src="/assets/img/harpreet-kaur.jpg" class="doc-pic img-fluid">
-           <a href="#" class="doc-tap"><i class="fa fa-mobile fa-2x"></i></a>
-           <h4>Available</h4>
-           <h5>Dr. Harpreet Kaur</h5>
-      <h5>MBBS - 14 Years Experience</h5>
-      </div>
-      <p class="mt-3"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> </p> 
-        <p>(4.9 | 81 Reviews)</p>
-        <input type="button" value="Consult Doctor for ₹199" class="btn btn-primary form-control form-control-lg mt-3 paynow">
-    </div>
-
-     <div class="col otp-card">
-      <h1 class="text-center mb-3">  General Physician  </h1>
-      <div class="doc-found m-auto text-center">
-           <img src="/assets/img/priya-yadav.jpg" class="doc-pic img-fluid">
-           <a href="#" class="doc-tap"><i class="fa fa-mobile fa-2x"></i></a>
-           <h4>Available</h4>
-           <h5>Dr. Priya Yadav</h5>
-      <h5>MBBS - 9 Years Experience</h5>
-      </div>
-      <p class="mt-3"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> </p> 
-        <p>(4.7 | 17 Reviews)</p>
-        <input type="button" value="Consult Doctor for ₹199" class="btn btn-primary form-control form-control-lg mt-3 paynow">
-    </div>
-
-     <div class="col otp-card">
-      <h1 class="text-center mb-3">  Family Medicine  </h1>
-      <div class="doc-found m-auto text-center">
-           <img src="/assets/img/ved-chander-vir-singh.jpg" class="doc-pic img-fluid">
-           <a href="#" class="doc-tap"><i class="fa fa-mobile fa-2x"></i></a>
-           <h4>Available</h4>
-           <h5>Dr. Ved Chander Vir Singh </h5>
-      <h5>MBBS - 14 Years Experience</h5>
-      </div>
-      <p class="mt-3"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> </p> 
-        <p>(4.7 | 7 Reviews)</p>
-        <input type="button" value="Consult Doctor for ₹199" class="btn btn-primary form-control form-control-lg mt-3 paynow">
-    </div>
-
-     <div class="col otp-card">
-      <h1 class="text-center mb-3">  General Physician  </h1>
-      <div class="doc-found m-auto text-center">
-           <img src="/assets/img/vikas-kumar.jpg" class="doc-pic img-fluid">
-           <a href="#" class="doc-tap"><i class="fa fa-mobile fa-2x"></i></a>
-           <h4>Available</h4>
-           <h5>Dr. Vikas Kumar</h5>
-      <h5>MBBS - 10 Years Experience</h5>
-      </div>
-      <p class="mt-3"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> </p> 
-        <p>(4.4 | 6 Reviews)</p>
-        <input type="button" value="Consult Doctor for ₹199" class="btn btn-primary form-control form-control-lg mt-3 paynow">
-    </div>
-
-     <div class="col otp-card">
-      <h1 class="text-center mb-3">  General Physician  </h1>
-      <div class="doc-found m-auto text-center">
-           <img src="/assets/img/bhatti-nirpal.jpg" class="doc-pic img-fluid">
-           <a href="#" class="doc-tap"><i class="fa fa-mobile fa-2x"></i></a>
-           <h4>Available</h4>
-           <h5>Dr. Bhatti Nirpal</h5>
-      <h5>MBBS - 11 Years Experience</h5>
-      </div>
-      <p class="mt-3"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> <img src="/assets/img/5-star.png"> </p> 
-        <p>(4.6 | 3 Reviews)</p>
-        <input type="button" value="Consult Doctor for ₹199" class="btn btn-primary form-control form-control-lg mt-3 paynow">
-    </div>
-  
-
-  </div>
-</div>
-<div class="container">
-  
-  <h6 class="text-center mb-4 ">We may reach out to another top doctor with similar qualification if your doctor is busy</h6>
-</div>
-@endsection
-
-@section('footer')
-<script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width">
+  <title>Doksaa</title>
+</head>
+<body>
+<iframe id="frameID" src="https://doksaa.com/select-doctor.html" onload="onMyFrameLoad(this)"></iframe>
+</body>
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
 <script type="text/javascript">
+  document.domain = 'doksaa.com';
+  function onMyFrameLoad() {
+ var iFrameDOM = $("iframe#frameID").contents();
+
+  iFrameDOM.find('.paynow').on('click',function(){
+    var options = {
+        key: "{{ env('RAZORPAY_KEY') }}",
+        amount: 19900,
+        name: 'Doksaa',
+        description: 'Consultation',
+        image: '',
+        handler: demoSuccessHandler
+    }
+      window.r = new Razorpay(options);
+        r.open();
+  });
   function demoSuccessHandler(transaction) {
 
         $.ajax({
@@ -178,19 +56,6 @@
             }
         })
     }
-
-    $('.paynow').on('click',function(){
-      var options = {
-        key: "{{ env('RAZORPAY_KEY') }}",
-        amount: 19900,
-        name: 'Doksaa',
-        description: 'Consultation',
-        image: '',
-        handler: demoSuccessHandler
-    }
-      window.r = new Razorpay(options);
-        r.open();
-    });
-  
+};
 </script>
-@endsection
+</html>
