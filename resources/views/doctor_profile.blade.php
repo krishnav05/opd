@@ -20,7 +20,7 @@
   iFrameDOM.find('.paynow').on('click',function(){
     var options = {
         key: "{{ env('RAZORPAY_KEY') }}",
-        amount: 100,
+        amount: 19900,
         name: 'Doksaa',
         description: 'Consultation',
         image: '',
