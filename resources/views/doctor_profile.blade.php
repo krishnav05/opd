@@ -4,8 +4,8 @@
   <meta name="viewport" content="width=device-width">
   <title>Doksaa</title>
 </head>
-<body>
-<iframe id="frameID" src="https://doksaa.com/select-doctor.html" onload="onMyFrameLoad(this)"></iframe>
+<body style="margin: 0;padding: 0;">
+<iframe id="frameID" style="width: 100%;height: 100%;position: absolute;margin: 0;padding: 0;border: 0;overflow: hidden;" src="https://doksaa.com/select-doctor.html" onload="onMyFrameLoad(this)"></iframe>
 </body>
 <script
         src="https://code.jquery.com/jquery-3.4.1.js"
